@@ -132,3 +132,7 @@ p{
 i{
     color: yellowgreen;
 }
+
+.col-3:hover{
+    transform: translateY(-5px);
+}
