@@ -148,3 +148,46 @@ i{
 .col-3:hover{
     transform: translateY(-5px);
 }
+
+.footer{
+    background: whitesmoke;
+    color: black;
+    font-size: 14px;
+    padding: 60px 0 20px;
+}
+
+.footer p{
+    color: black;
+}
+
+.footer h3{
+    color: burlywood;
+    margin-bottom: 20px;
+}
+
+.fct1, .fct2, .fct3, .fct4{
+    min-width: 250px;
+    margin-bottom: 20px;
+}
+
+.fct1{
+    flex-basis: 30%;
+}
+
+.fct2{
+    flex: 1;
+    text-align: center;
+}
+
+.fct2 img{
+    margin-bottom: 20px;
+}
+
+.fct3,.fct4{
+    flex-basis: 12%;
+    text-align: center;
+}
+
+ul{
+    list-style-type: none;
+}
