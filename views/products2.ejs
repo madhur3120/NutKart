@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/NutKART.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,500&family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+    <p>
+        <%= name %>
+    </p>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="/home"><img src="images/NutKART.png" width="125px" /> </a>
+                </div>
+                <nav>
+                    <ul id="menu-items">
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/products2">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="/account2">Account</a></li>
+                    </ul>
+                </nav>
+
+                <img src="images/cart.png" width="30px" height="30px" />
+                <img src="C:\Users\Madhur\OneDrive\Documents\VScode\Ecommerce\RedStore_Img\images\menu.png" class="menu-icon" onclick="menutoggle()" />
+            </div>
+        </div>
+    </div>
+
+    <div class="small-container">
+        <div class="row row-2">
+            <h2>All products</h2>
+            <br />
+            <br />
+
+            <select name="" id="">
+          <option value="">defaut sorting</option>
+          <option value="">sort by price</option>
+          <option value="">sort by popularity</option>
+          <option value="">sort by rating</option>
+          <option value="">sort by sale</option>
+          <!-- -----------work left here for css--------- -->
+        </select>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/granola-mix.jpg" alt="" />
+                <h4>Granola Mix</h4>
+                <p>Rs. 120/-</p>
+            </div>
+            <div class="col-4">
+                <img src="images/hapillo cashew.jpg" alt="" />
+                <h4>Happilo Cashews</h4>
+                <p>Rs. 250/-</p>
+            </div>
+            <div class="col-4">
+                <img src="images/hapillo gojiberries.jpg" alt="" />
+                <h4>Happilo gojiberries</h4>
+                <p>Rs. 350/-</p>
+            </div>
+            <div class="col-4">
+                <img src="images/hapillo pista.jpg" alt="" />
+                <h4>Happilo Pista</h4>
+                <p>Rs. 380/-</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="small-container">
+        <div class="row">
+            <div class="col-4">
+                <img src="images/hapillo rasin.jpg" id="abc" alt="" />
+                <h4>Happilo Rasin</h4>
+                <p>Rs. 380/-</p>
+            </div>
+            <div class="col-4">
+                <img src="images/nutty mixedberries.jpg" height="250px" alt="" />
+                <h4>Nutty Mixedberries</h4>
+                <p>Rs. 400/-</p>
+            </div>
+            <div class="col-4">
+                <img src="images/nutty sports.jpg" alt="" />
+                <h4>Nutty Sports</h4>
+                <p>Rs. 420/-</p>
+            </div>
+            <div class="col-4">
+                <img src="images/pistachio-sld1.png" alt="" />
+                <h4>Pistachio</h4>
+                <p>Rs. 350/-</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-4">
+                <img src="images/nuts-almond.png" alt="" />
+                <h4>Almonds</h4>
+                <p>Rs. 279/-</p>
+            </div>
+            <div class="col-4">
+                <img src="images/nutty mixedberries3.jpg" alt="" />
+                <h4>Nutty Mixedberries Small</h4>
+                <p>Rs. 200/-</p>
+            </div>
+            <div class="col-4">
+                <img src="images/happilo pista 2.jpg" alt="" />
+                <h4>Happilo Pista Small</h4>
+                <p>Rs. 150/-</p>
+            </div>
+            <div class="col-4">
+                <img src="images/nutty sports3.jpg" alt="" />
+                <h4>Nutty Sports Small</h4>
+                <p>Rs. 180/-</p>
+            </div>
+        </div>
+    </div>
+
+    <!--javascript for toggle menu-->
+
+    <script>
+        let menuitems = document.getElementById("menu-items");
+        menuitems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (menuitems.style.maxHeight == "0px") {
+                menuitems.style.maxHeight = "200px";
+            } else {
+                menuitems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <!-- -----------footer--------- -->
+    <footer>
+        <div style="min-height: 250px" class="footer" id="footer-sub">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>HELP</h5>
+                        <ul>
+                            <li>
+                                <a href="">Previous Orders</a>
+                                <hr />
+                            </li>
+                            <li>
+                                <a href="">HelpDesk</a>
+                                <hr />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>NutKART</h5>
+                        <ul>
+                            <li>
+                                <a href="">About Us</a>
+                                <hr />
+                            </li>
+                            <li><a href="">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>MISC</h5>
+                        <ul>
+                            <li>
+                                <a href="">Products</a>
+                                <hr />
+                            </li>
+                            <li>
+                                <a href="">Blogs</a>
+                                <hr />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr style="margin-bottom: 0px; margin-top: 30px; padding: 0px" />
+                <div class="row" id="sub-two">
+                    <div class="col-md-4">
+                        <div class="vertical-line text-center">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            <h4>HASSLE FREE SHOPPING</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="vertical-line text-center">
+                            <span class="glyphicon glyphicon-refresh"></span>
+                            <h4>FREE & EASY RETURNS</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div style="margin: 8px" class="text-center">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <h4 style="color: #6d6c6c">HEALTHY DRY FRUITS</h4>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-bottom: 30px; margin-top: 0px; padding: 0px" />
+            </div>
+        </div>
+        <div style="min-height: 50px" id="footer-main">
+            <ul>
+                <li>
+                    <a href=""><b>About Us</b></a>
+                </li>
+                <li>
+                    <a href=""><b>Terms & Conditions</b></a>
+                </li>
+                <li>
+                    <a href=""><b>Blog</b></a>
+                </li>
+            </ul>
+
+            <div id="social-menu">
+                <ul>
+                    <li>
+                        <a href=""><img style="max-width: 18px; margin-top: -7px" src="" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img style="max-width: 18px; margin-top: -7px" src="" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img style="max-width: 18px; margin-top: -7px" src="" /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
