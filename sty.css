@@ -190,4 +190,43 @@ i{
 
 ul{
     list-style-type: none;
+    font-size: large;
+}
+
+.footer li{
+    padding-top: 10px;
+}
+
+.footer hr{
+    border: none;
+    background: black;
+    height: 3px;
+    margin: 20px 0;
+}
+
+.menu{
+    width: 28px;
+    margin-left: 20px;
+}
+
+@media only screen and (max-width:800px){
+    nav ul{
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: white;
+        width: 100%;
+
+    }
+
+    nav ul li{
+        display: block;
+        margin-top: 10px;
+        margin-right: 50px;
+        margin-bottom: 10px;
+    }
+
+    nav ul li a{
+        color: blue;
+    }
 }
