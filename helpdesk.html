@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <title>HelpDesk</title>
+</head>
+<body>
+    <div class="header">
+        <div class="container">
+          <div class="navbar">
+            <div class="logo">
+              <a href="/"><img src="images/NutKART.png" width="125px" /> </a>
+            </div>
+            <nav>
+              <ul id="menu-items">
+                <li><a href="/">Home</a></li>
+                <li><a href="/products">Products</a></li>
+                <li><a href="">About</a></li>
+                <li><a href="">Contact</a></li>
+                <li><a href="/account">Account</a></li>
+              </ul>
+            </nav>
+  
+            <img src="images/kart.png" width="30px" height="30px" />
+            <img
+              src="C:\Users\Madhur\OneDrive\Documents\VScode\Ecommerce\RedStore_Img\images\menu.png"
+              class="menu-icon"
+              onclick="menutoggle()"
+            />
+          </div>
+        </div>
+    </div>
+    
+<hr width="100%" size="10">
+
+    <!--help-desk-->
+    <div class="line">
+     <marquee behavior="alternate" direction="right">Hi,(name) . Let us help you.</marquee>
+    </div>
+
+<hr width="100%" size="10">
+
+    <div class="helpdesk">
+        <div class="grid-container">
+            <a href=""><div class="hvr-grow-shadow"><h4>Your Orders</h4></div></a>
+            <a href=""><div class="hvr-grow-shadow"><h4>Give Feedback</h4></div></a>
+            <a href=""><div class="hvr-grow-shadow"><h4>Manage Addresses</h4></div></a>
+            <a href=""><div class="hvr-grow-shadow"><h4>Payment Settings</h4></div></a>
+            <a href=""><div class="hvr-grow-shadow"><h4>Digital Services</h4></div></a>
+            <a href=""><div class="hvr-grow-shadow"><h4>Account Setting</h4></div></a>
+        </div>
+    </div>
+
+    <hr width="100%" size="10">
+
+    <div class="contact">
+     <h3 style="font-size: xx-large;">***Contact Anytime***</h3>
+      <h4 style="font-size: large; padding-bottom: 20px;">Freely contact with us</h4>
+      <div class="wrap">
+        <div class="feedback">
+          <h1>Let us help with your queries.</h1>
+          <form action="">
+            <div class="form-row">
+              <input type="text" id="text" class="row_input" required>
+              <label for="text" class="label">enter you name</label>
+            </div>
+            <div class="form-row">
+              <input type="email" id="email" class="row_input" required>
+              <label for="email" class="label">your email address</label>
+            </div>
+            <div class="form-row">
+              <textarea name="message" id="message" class="row_input" cols="30" rows="5" required></textarea>
+              <label for="message" class="label">your queries</label>
+            </div>
+            <div class="form-row">
+              <div class="button">
+                <button type="submit" text-align="center">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    
+      <hr width="100%" size="10">
+
+      <div class="cnct">
+        <div class="ref">
+          <div class="effect">
+            <img src="images/locate.png" width="20%">
+            <br>
+            <h3>Address:</h3>
+            <p style="color: black;">Gyan Circle, SriCity, Chittoor, Andhra Pradhesh</p>
+          </div>
+          <div class="effect">
+            <img src="images/call1.png" width="30%">
+            <br>
+            <h3>Phone:</h3>
+            <p style="color: black;">+91 111 222 3333/+91 444 555 6666</p>
+          </div>
+          <div class="effect">
+            <img src="images/mail5.png" width="30%">
+            <br>
+            <h3>Mail Address:</h3>
+            <p style="color: black;">abcd1233@gmail.com, kuber@nutkart.in</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+<hr width="100%" size="10">
+
+<a class="mybtn" href="#"><i class="fas fa-arrow-up"></i></a>
+
+    <!--footer-->
+    
+    <footer>
+        <div style="min-height: 250px" class="footer" id="footer-sub">
+          <div class="container">
+            <div class="row">
+              <div class="col-md-4">
+                <h5>HELP</h5>
+                <ul>
+                  <li>
+                    <a href="">Previous Orders</a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="">HelpDesk</a>
+                    <hr />
+                  </li>
+                </ul>
+              </div>
+  
+              <div class="col-md-4">
+                <h5>NutKART</h5>
+                <ul>
+                  <li>
+                    <a href="">About Us</a>
+                    <hr />
+                  </li>
+                  <li><a href="">Contact Us</a></li>
+                </ul>
+              </div>
+  
+              <div class="col-md-4">
+                <h5>MISC</h5>
+                <ul>
+                  <li>
+                    <a href="">Products</a>
+                    <hr />
+                  </li>
+                  <li>
+                    <a href="">Blogs</a>
+                    <hr />
+                  </li>
+                </ul>
+              </div>
+            </div>
+  
+            <hr style="margin-bottom: 0px; margin-top: 30px; padding: 0px" />
+            <div class="row" id="sub-two">
+              <div class="col-md-4">
+                <div class="vertical-line text-center">
+                  <span class="glyphicon glyphicon-map-marker"></span>
+                  <h4>HASSLE FREE SHOPPING</h4>
+                </div>
+              </div>
+  
+              <div class="col-md-4">
+                <div class="vertical-line text-center">
+                  <span class="glyphicon glyphicon-refresh"></span>
+                  <h4>FREE & EASY RETURNS</h4>
+                </div>
+              </div>
+  
+              <div class="col-md-4">
+                <div style="margin: 8px" class="text-center">
+                  <span class="glyphicon glyphicon-remove-circle"></span>
+                  <h4 style="color: #6d6c6c">HEALTHY DRY FRUITS</h4>
+                </div>
+              </div>
+            </div>
+            <hr style="margin-bottom: 30px; margin-top: 0px; padding: 0px" />
+          </div>
+        </div>
+        <div style="min-height: 50px" id="footer-main">
+          <ul>
+            <li>
+              <a href=""><b>About Us</b></a>
+            </li>
+            <li>
+              <a href=""><b>Terms & Conditions</b></a>
+            </li>
+            <li>
+              <a href=""><b>Blog</b></a>
+            </li>
+          </ul>
+  
+          <div id="social-menu">
+            <ul>
+              <li>
+                <a href=""
+                  ><img style="max-width: 18px; margin-top: -7px" src=""
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img style="max-width: 18px; margin-top: -7px" src=""
+                /></a>
+              </li>
+              <li>
+                <a href=""
+                  ><img style="max-width: 18px; margin-top: -7px" src=""
+                /></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+</body>
+</html>
