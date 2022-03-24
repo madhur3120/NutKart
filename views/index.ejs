@@ -1,92 +1,132 @@
-<!-- group 25 -->
-<!-- group 25 -->
-<!-- group 25 -->
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width" initial-scale="1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ecommerce website design</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,500&family=Roboto&display=swap" rel="stylesheet">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Homepage design with Bootstrap and Animate css</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/home.css" />
 </head>
 
 <body>
-    <div class="header">
-        <div class="container">
-            <div class="navbar">
-                <div class="logo">
-                    <a href="/"><img src="images/logo.png" width="150px" height="150px">
-                    </a>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+                    <a class="navbar-brand" href="#">NutKart</a>
                 </div>
-                <nav>
-                    <ul id="menu-items">
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Home</a></li>
                         <li><a href="/products">Products</a></li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Contact</a></li>
-                        <li><a href="/account">Account</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
                     </ul>
-                </nav>
-
-                <img src="images/cart.png" width="30px" height="30px">
-                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
-
-
-            </div>
-
-            <div class="row">
-                <div class="col-2">
-                    <h1>Dry fruits <br>eat fresh</h1>
-                    <a href="" class="btn">explore now &#8594;</a>
                 </div>
-                <div class="col-2">
-                    <img src="images/energy-granola-bars.jpg">
+                <!-- /.navbar-collapse -->
+            </div>
+            <!-- /.container-fluid -->
+        </nav>
+
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            <!-- Indicators -->
+            <ol class="carousel-indicators">
+                <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            </ol>
+
+            <!-- Wrapper for slides -->
+            <div class="carousel-inner" role="listbox">
+                <div class="item active">
+                    <div class="banner" style="background-image: url(images/banner2.jpg)"></div>
+                    <div class="carousel-caption">
+                        <h2 class="animated bounceInRight" style="animation-delay: 1s">
+                            We Are <span>NutKart</span>
+                        </h2>
+                        <h3 class="animated bounceInLeft" style="animation-delay: 2s">
+                            Healthy and Tasty Dried Fruits
+                        </h3>
+                        <p class="animated bounceInRight" style="animation-delay: 3s">
+                            <a href="#">About Us</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="banner" style="background-image: url(images/banner1.jpg)"></div>
+                    <div class="carousel-caption">
+                        <h2 class="animated slideInDown" style="animation-delay: 1s">
+                            Your Health is our <span>Priority</span>
+                        </h2>
+                        <h3 class="animated fadeInUp" style="animation-delay: 2s">
+                            Read More about Health in our Blogs
+                        </h3>
+                        <p class="animated zoomIn" style="animation-delay: 3s">
+                            <a href="#">Blogs</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="banner" style="background-image: url(images/banner3.jpg)"></div>
+                    <div class="carousel-caption">
+                        <h2 class="animated zoomIn" style="animation-delay: 1s">
+                            Excellent Quality <span>Lowest Prices</span>
+                        </h2>
+                        <h3 class="animated fadeInLeft" style="animation-delay: 2s">
+                            One Stop Solution for All Dried Fruits
+                        </h3>
+                        <p class="animated zoomIn" style="animation-delay: 3s">
+                            <a href="#">Products</a>
+                        </p>
+                    </div>
                 </div>
             </div>
+
+            <!-- Controls -->
+            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
         </div>
+    </header>
+    <br>
+    <br>
 
-    </div>
-
-    <!-- -------featured categories-------
-
-    <div class="categories">
-        <div class="small-container">
-            <div class="row">
-                <div class="col-3"><img src="images/.jpg" alt=""></div>
-                <div class="col-3"><img src="images/.jpg" alt=""></div>
-                <div class="col-3"><img src="images/.jpg" alt=""></div>
-            </div>
-        </div>
-
-    </div> -->
-
-
-    <!-- -------featured products------- -->
+    <!--=================== products section======================== -->
 
     <div class="small-container">
         <h1 class="title">featured products</h1>
         <div class="row">
             <div class="col-4">
-                <img src="images/granola-mix.jpg" alt="">
+                <img src="images/greenfinity-roasted-pistachio1.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="col-4">
-                <img src="images/nutty sports2.jpg" alt="">
+                <img src="images/nutty-sports2.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="col-4">
-                <img src="images/nuts-almond.png" alt="">
+                <img src="images/nutraj-walnut1.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="col-4">
-                <img src="images/energy-granola-bars.jpg" alt="">
+                <img src="images/tata-almonds1.jpg" alt="">
                 <h4></h4>
             </div>
         </div>
@@ -94,190 +134,30 @@
 
     <!-- -------latest products------- -->
 
-
     <div class="small-container">
         <h1 class="title">latest products</h1>
         <div class="row">
             <div class="col-4">
-                <img src="images/nutty mixedberries.jpg" alt="">
+                <img src="images/happilo-omani-dates1.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="col-4">
-                <img src="images/nutty mixedberries3.jpg" alt="">
+                <img src="images/happilo-supermix-berries1.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="col-4">
-                <img src="images/pistachio-sld1.png" alt="">
+                <img src="images/namo-brazil-nuts1.jpg" alt="">
                 <h4></h4>
             </div>
             <div class="col-4">
-                <img src="images/919PVkJ8ORL._AC_UL480_FMwebp_QL65_.webp" alt="">
+                <img src="images/rostaa-hazelnut1.jpg" alt="" height="200px">
                 <h4></h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <img src="images/61oCf8MSKkL._AC_UL480_FMwebp_QL65_.webp" alt="">
-                <h4></h4>
-            </div>
-            <div class="col-4">
-                <img src="images/718o4VvgBlL._AC_UL480_FMwebp_QL65_.webp" alt="">
-                <h4></h4>
-            </div>
-            <div class="col-4">
-                <img src="images/71gb9anqlUL._AC_UL480_FMwebp_QL65_.webp" alt="">
-                <h4></h4>
-            </div>
-            <div class="col-4">
-                <img src="images/happilo pista 2.jpg" alt="">
-                <h4></h4>
-            </div>
-        </div>
-    </div>
-
-    <!-----------brands--------->
-    <div class="brands">
-        <div class="small-container">
-            <h1 class="title">brands</h1>
-            <div class="row">
-                <div class="col-4">
-                    <img src="images/Logo2022_180x (1).jpg" alt="">
-                    <h4></h4>
-                </div>
-                <div class="col-4">
-                    <img src="images/NG_Final_Logo_bnw_cs6-02_1_2.jpg" alt="">
-                    <h4></h4>
-                </div>
-                <div class="col-4">
-                    <img src="images/download.jpg" alt="">
-                    <h4></h4>
-                </div>
-                <div class="col-4">
-                    <img src="images/download.png" alt="">
-                    <h4></h4>
-                </div>
             </div>
         </div>
 
 
-
-        <!--javascript for toggle menu-->
-
-        <script>
-            let menuitems = document.getElementById('menu-items');
-            menuitems.style.maxHeight = "0px";
-
-            function menutoggle() {
-                if (menuitems.style.maxHeight == "0px") {
-                    menuitems.style.maxHeight = "200px";
-                } else {
-                    menuitems.style.maxHeight = "0px";
-                }
-            }
-        </script>
-
-
-        <!-- -----------footer remaining --------- -->
-
-        <footer>
-            <div style="min-height: 250px" class="footer" id="footer-sub">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <h5>HELP</h5>
-                            <ul>
-                                <li>
-                                    <a href="">Previous Orders</a>
-                                    <hr />
-                                </li>
-                                <li>
-                                    <a href="">HelpDesk</a>
-                                    <hr />
-                                </li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-4">
-                            <h5>NutKART</h5>
-                            <ul>
-                                <li>
-                                    <a href="">About Us</a>
-                                    <hr />
-                                </li>
-                                <li><a href="">Contact Us</a></li>
-                            </ul>
-                        </div>
-
-                        <div class="col-md-4">
-                            <h5>MISC</h5>
-                            <ul>
-                                <li>
-                                    <a href="">Products</a>
-                                    <hr />
-                                </li>
-                                <li>
-                                    <a href="">Blogs</a>
-                                    <hr />
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <hr style="margin-bottom: 0px; margin-top: 30px; padding: 0px" />
-                    <div class="row" id="sub-two">
-                        <div class="col-md-4">
-                            <div class="vertical-line text-center">
-                                <span class="glyphicon glyphicon-map-marker"></span>
-                                <h4>HASSLE FREE SHOPPING</h4>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div class="vertical-line text-center">
-                                <span class="glyphicon glyphicon-refresh"></span>
-                                <h4>FREE & EASY RETURNS</h4>
-                            </div>
-                        </div>
-
-                        <div class="col-md-4">
-                            <div style="margin: 8px" class="text-center">
-                                <span class="glyphicon glyphicon-remove-circle"></span>
-                                <h4 style="color: #6d6c6c">HEALTHY DRY FRUITS</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <hr style="margin-bottom: 30px; margin-top: 0px; padding: 0px" />
-                </div>
-            </div>
-            <div style="min-height: 50px" id="footer-main">
-                <ul>
-                    <li>
-                        <a href=""><b>About Us</b></a>
-                    </li>
-                    <li>
-                        <a href=""><b>Terms & Conditions</b></a>
-                    </li>
-                    <li>
-                        <a href=""><b>Blog</b></a>
-                    </li>
-                </ul>
-
-                <div id="social-menu">
-                    <ul>
-                        <li>
-                            <a href=""><img style="max-width: 18px; margin-top: -7px" src="" /></a>
-                        </li>
-                        <li>
-                            <a href=""><img style="max-width: 18px; margin-top: -7px" src="" /></a>
-                        </li>
-                        <li>
-                            <a href=""><img style="max-width: 18px; margin-top: -7px" src="" /></a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </footer>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </body>
 
 </html>

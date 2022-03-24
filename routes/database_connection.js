@@ -4,7 +4,7 @@ const con = mysql.createConnection({
     host: 'localhost',
     user: "root",
     password: "Pp27Bb07@",
-    database: "redstore"
+    database: "nutkart"
 })
 
 con.query(`select * from users`, (err, result) => {

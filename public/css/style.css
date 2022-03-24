@@ -3,6 +3,9 @@
 
 /*-----group 25----------*/
 
+
+/* *============== home and products ================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -116,6 +119,10 @@ p {
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
+}
+
+.small-container h2 {
+    margin-left: -100px;
 }
 
 .col-4 {
@@ -345,7 +352,28 @@ h4 {
     overflow: hidden;
 }
 
+.form-container1 {
+    background: #fff;
+    width: 300px;
+    height: 400px;
+    text-align: center;
+    position: relative;
+    padding: 20px 0;
+    margin: auto;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
 .form-container span {
+    font-weight: bold;
+    padding: 0 10px;
+    color: #555;
+    cursor: pointer;
+    width: 100px;
+    display: inline-block;
+}
+
+.form-container1 span {
     font-weight: bold;
     padding: 0 10px;
     color: #555;
@@ -358,7 +386,19 @@ h4 {
     display: inline-block;
 }
 
+.form-btn1 {
+    display: inline-block;
+}
+
 .form-container form {
+    max-width: 300px;
+    padding: 0 20px;
+    position: absolute;
+    top: 130px;
+    transition: transform 1s;
+}
+
+.form-container1 form {
     max-width: 300px;
     padding: 0 20px;
     position: absolute;
@@ -393,6 +433,14 @@ form .btn:focus {
     left: 0;
 }
 
+#loginform1 {
+    left: -300px;
+}
+
+#regform1 {
+    left: 0;
+}
+
 form a {
     font-size: 12px;
 }
@@ -405,4 +453,21 @@ form a {
     margin-top: 8px;
     transform: translateX(100px);
     transition: transform 1s;
+}
+
+#indicator1 {
+    width: 100px;
+    border: none;
+    background: #ff523b;
+    height: 3px;
+    margin-top: 8px;
+    transform: translateX(100px);
+    transition: transform 1s;
+}
+
+
+/*------------- cart detail page----------- */
+
+.cart-page {
+    margin: 80px auto;
 }

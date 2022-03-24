@@ -2,7 +2,6 @@
 <html lang="en">
 
 <head>
-    <link rel="icon" type="image/x-icon" href="/images/NutKART.ico" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" initial-scale="1.0" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,14 +14,12 @@
 </head>
 
 <body>
-    <p>
-        <%= name %>
-    </p>
+
     <div class="header">
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <a href="/home"><img src="images/NutKART.png" width="125px" /> </a>
+                    <a href="/home"><img src="images/logo.png" width="125px" /> </a>
                 </div>
                 <nav>
                     <ul id="menu-items">
@@ -31,21 +28,32 @@
                         <li><a href="">About</a></li>
                         <li><a href="">Contact</a></li>
                         <li><a href="/account2">Account</a></li>
+                        <img src="images/user3.png" alt="" height="15px" width="15px">
+                        <li>
+                            <a href="/account2">
+                                <%= name %>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
 
                 <img src="images/cart.png" width="30px" height="30px" />
-                <img src="C:\Users\Madhur\OneDrive\Documents\VScode\Ecommerce\RedStore_Img\images\menu.png" class="menu-icon" onclick="menutoggle()" />
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()" />
             </div>
         </div>
     </div>
+
+
+    <br>
+    <br>
 
     <div class="small-container">
         <div class="row row-2">
             <h2>All products</h2>
             <br />
             <br />
-
+            <br>
+            <br>
             <select name="" id="">
           <option value="">defaut sorting</option>
           <option value="">sort by price</option>
@@ -57,22 +65,22 @@
         </div>
         <div class="row">
             <div class="col-4">
-                <img src="images/granola-mix.jpg" alt="" />
+                <a href="/productdetail/granola-mix"> <img src="images/granola-mix.jpg" /> </a>
                 <h4>Granola Mix</h4>
                 <p>Rs. 120/-</p>
             </div>
             <div class="col-4">
-                <img src="images/hapillo cashew.jpg" alt="" />
+                <a href="/productdetail/happilo-cashew"><img src="images/happilo-cashew.jpg" /></a>
                 <h4>Happilo Cashews</h4>
                 <p>Rs. 250/-</p>
             </div>
             <div class="col-4">
-                <img src="images/hapillo gojiberries.jpg" alt="" />
+                <a href="/productdetail/happilo-gojiberries2"><img src="images/happilo-gojiberries2.jpg" alt="" /></a>
                 <h4>Happilo gojiberries</h4>
                 <p>Rs. 350/-</p>
             </div>
             <div class="col-4">
-                <img src="images/hapillo pista.jpg" alt="" />
+                <a href="/productdetail/happilo-pista1"><img src="images/happilo-pista1.jpg" alt="" /></a>
                 <h4>Happilo Pista</h4>
                 <p>Rs. 380/-</p>
             </div>
@@ -82,49 +90,55 @@
     <div class="small-container">
         <div class="row">
             <div class="col-4">
-                <img src="images/hapillo rasin.jpg" id="abc" alt="" />
+                <a href="/productdetail/happilo-pista2"><img src="images/happilo-pista2.jpg" alt="" /></a>
+
                 <h4>Happilo Rasin</h4>
                 <p>Rs. 380/-</p>
             </div>
             <div class="col-4">
-                <img src="images/nutty mixedberries.jpg" height="250px" alt="" />
+                <a href="/productdetail/nutty-mixedberries"><img src="images/nutty-mixedberries.jpg" height="250px" alt="" /></a>
+
                 <h4>Nutty Mixedberries</h4>
                 <p>Rs. 400/-</p>
             </div>
             <div class="col-4">
-                <img src="images/nutty sports.jpg" alt="" />
+                <a href="/productdetail/nutty-sports"><img src="images/nutty-sports.jpg" alt="" /></a>
                 <h4>Nutty Sports</h4>
                 <p>Rs. 420/-</p>
             </div>
             <div class="col-4">
-                <img src="images/pistachio-sld1.png" alt="" />
+                <a href="/productdetail/pista"><img src="images/pista.png" alt="" /></a>
+
                 <h4>Pistachio</h4>
                 <p>Rs. 350/-</p>
             </div>
         </div>
         <div class="row">
             <div class="col-4">
-                <img src="images/nuts-almond.png" alt="" />
+                <a href="/productdetail/nuts-almond"><img src="images/nuts-almond.png" alt="" /></a>
                 <h4>Almonds</h4>
                 <p>Rs. 279/-</p>
             </div>
             <div class="col-4">
-                <img src="images/nutty mixedberries3.jpg" alt="" />
+                <a href="/productdetail/nuts-almond"><img src="images/nutty-mixedberries3.jpg" alt="" /></a>
+
                 <h4>Nutty Mixedberries Small</h4>
                 <p>Rs. 200/-</p>
             </div>
             <div class="col-4">
-                <img src="images/happilo pista 2.jpg" alt="" />
+                <a href="/productdetail/happilo-pista2"><img src="images/happilo-pista2.jpg" alt="" /></a>
+
                 <h4>Happilo Pista Small</h4>
                 <p>Rs. 150/-</p>
             </div>
             <div class="col-4">
-                <img src="images/nutty sports3.jpg" alt="" />
+                <a href="/productdetail/nutty-sports3"><img src="images/nutty-sports3.jpg" alt="" /></a>
                 <h4>Nutty Sports Small</h4>
                 <p>Rs. 180/-</p>
             </div>
         </div>
     </div>
+
 
     <!--javascript for toggle menu-->
 

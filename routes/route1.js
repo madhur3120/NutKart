@@ -6,41 +6,150 @@ const con = require('./database_connection')
 
 let loggeduser = ""
 
+////////////////////////////////////////////////
+
+const mysql = require('mysql')
+const session = require('express-session');
+const MySQLStore = require('express-mysql-session')(session);
+
+let options = {
+    host: 'localhost',
+    port: '3306',
+    user: 'root',
+    password: 'Pp27Bb07@',
+    database: 'nutkart'
+}
+const sessionconnection = mysql.createConnection(options)
+
+const sessionStore = new MySQLStore({
+    expiration: 1000000,
+    createDatabaseTable: true,
+    schema: {
+        tableName: 'sessions',
+        columnNames: {
+            session_id: 'sessionid',
+            expires: 'expires',
+            data: 'data'
+        }
+    }
+}, sessionconnection)
+
+
+router.use(
+    session({
+        key: 'keyin',
+        secret: 'cookie_secret',
+        resave: false,
+        saveUninitialized: false,
+        store: sessionStore, // assigning sessionStore to the session
+    })
+);
+
+const isAuth = (req, res, next) => {
+    if (req.session.isAuth) {
+        next();
+    } else {
+        res.redirect('/account')
+    }
+}
+
+
+////////////////////////////////////////////////////////////////
+
+
+
 router.get("/", (req, res) => {
+    req.session.isAuth = false
     res.render('index')
 })
 
-router.get("/home", (req, res) => {
+router.get("/home", isAuth, (req, res) => {
     res.render('index2', {
         name: loggeduser
     })
 })
 
+// router.get("/products", (req, res) => {
+
+//     res.render('products')
+// })
+
 router.get("/products", (req, res) => {
-    res.render('products')
+
+    sql1 = "select * from products"
+    con.query(sql1, (err, result) => {
+            if (err) {
+                throw err
+            }
+            console.log(result);
+            res.render('products', {
+                imgsrc: result[0].img_src1,
+                product_name: result[0].product_name
+                    // imgsrc2: result[0].img_src3
+                    // imgsrc3: result[0].img_src1
+
+            })
+        })
+        // res.render('products')
+
+    // console.log(imgsrcc);
 })
 
-router.get("/products2", (req, res) => {
+router.get("/products2", isAuth, (req, res) => {
     res.render('products2', {
         name: loggeduser
     })
 })
 
 router.get("/account", (req, res) => {
+    req.session.isAuth = false;
     res.render('account')
 })
 
-router.get("/account2", (req, res) => {
+// router.get("/account", (req, res) => {
+//     req.session.isAuth = false;
+//     res.render('account', {
+//         message: "login to continue"
+//     })
+// })
+
+router.get("/account2", isAuth, (req, res) => {
     res.render('account2', {
         name: loggeduser
     })
 })
 
+router.get("/cart/:x", (req, res) => {
+
+    if (req.session.isAuth == true) {
+        let productId = req.params.x;
+        console.log(productId);
+
+        res.render('cart', {
+            imgsrc: '/images/' + productId + '.jpg'
+        })
+    } else {
+        console.log("hello pratik");
+        res.render('account')
+    }
+
+})
+
+router.get("/productdetail/:x", (req, res) => {
+
+    var productId = req.params.x;
+
+    res.render('productdetail', {
+        imgsrc: '/images/' + productId + '.jpg'
+    })
+})
 
 router.post("/register", urlencodedparser, function(req, res) {
     let username = req.body.username
     let email = req.body.email
     let password = req.body.password
+    let mobile = req.body.mobile
+
 
     // let sql1 = `select username , email , password from users where ('${username}' = username) && ('${email}' = email) && ('${password}' = password) `
 
@@ -52,13 +161,12 @@ router.post("/register", urlencodedparser, function(req, res) {
             con.query(sql3, (err, result4) => {
                 if (err) throw err;
                 if (result4.length == 0) {
-                    let sql2 = `insert into users values ('${username}','${email}','${password}') ;`
+                    let sql2 = `insert into users values ('${username}','${email}','${mobile}','${password}') ;`
                     con.query(sql2, (err, result2) => {
                         if (err) throw err;
                         // logging after registering
-                        loggeduser: username
                         res.render('index2', {
-                            name: loggeduser
+                            loggeduser: username
                         })
                     })
                 } else {
@@ -99,6 +207,7 @@ router.post("/login", urlencodedparser, function(req, res) {
                     })
                 } else {
                     // success login
+                    req.session.isAuth = true;
                     loggeduser = username
                     res.render('index2', {
                         name: username
