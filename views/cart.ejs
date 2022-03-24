@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" type="image/x-icon" href="/images/NutKART.ico" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" initial-scale="1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,500&family=Roboto&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+
+
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <a href="/home"><img src="../images/NutKART.png" width="125px" /> </a>
+                </div>
+                <nav>
+                    <ul id="menu-items">
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/products2">Products</a></li>
+                        <li><a href="">About</a></li>
+                        <li><a href="">Contact</a></li>
+                        <li><a href="/account2">Account</a></li>
+                    </ul>
+                </nav>
+
+                <img src="/images/cart.png" width="30px" height="30px" />
+                <img src="" class="menu-icon" onclick="menutoggle()" />
+            </div>
+        </div>
+    </div>
+
+
+    <!-- -----------------cart item details---------- -->
+
+    <img src=<%=imgsrc%> height="140px" width="140px" >
+
+    <div class="small-container cart-page">
+        <table>
+            <tr>
+                <th>product</th>
+                <th>quantity</th>
+                <th>subtotal</th>
+            </tr>
+
+            <tr>
+                <td>product name</td>
+                <td><input type="number" value="1"></td>
+
+            </tr>
+        </table>
+    </div>
+
+    <!--javascript for toggle menu-->
+
+    <script>
+        let menuitems = document.getElementById("menu-items");
+        menuitems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (menuitems.style.maxHeight == "0px") {
+                menuitems.style.maxHeight = "200px";
+            } else {
+                menuitems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <!-- -----------footer--------- -->
+    <footer>
+        <div style="min-height: 250px" class="footer" id="footer-sub">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>HELP</h5>
+                        <ul>
+                            <li>
+                                <a href="">Previous Orders</a>
+                                <hr />
+                            </li>
+                            <li>
+                                <a href="">HelpDesk</a>
+                                <hr />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>NutKART</h5>
+                        <ul>
+                            <li>
+                                <a href="">About Us</a>
+                                <hr />
+                            </li>
+                            <li><a href="">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>MISC</h5>
+                        <ul>
+                            <li>
+                                <a href="">Products</a>
+                                <hr />
+                            </li>
+                            <li>
+                                <a href="">Blogs</a>
+                                <hr />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr style="margin-bottom: 0px; margin-top: 30px; padding: 0px" />
+                <div class="row" id="sub-two">
+                    <div class="col-md-4">
+                        <div class="vertical-line text-center">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            <h4>HASSLE FREE SHOPPING</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="vertical-line text-center">
+                            <span class="glyphicon glyphicon-refresh"></span>
+                            <h4>FREE & EASY RETURNS</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div style="margin: 8px" class="text-center">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <h4 style="color: #6d6c6c">HEALTHY DRY FRUITS</h4>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-bottom: 30px; margin-top: 0px; padding: 0px" />
+            </div>
+        </div>
+        <div style="min-height: 50px" id="footer-main">
+            <ul>
+                <li>
+                    <a href=""><b>About Us</b></a>
+                </li>
+                <li>
+                    <a href=""><b>Terms & Conditions</b></a>
+                </li>
+                <li>
+                    <a href=""><b>Blog</b></a>
+                </li>
+            </ul>
+
+            <div id="social-menu">
+                <ul>
+                    <li>
+                        <a href=""><img style="max-width: 18px; margin-top: -7px" src="" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img style="max-width: 18px; margin-top: -7px" src="" /></a>
+                    </li>
+                    <li>
+                        <a href=""><img style="max-width: 18px; margin-top: -7px" src="" /></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
