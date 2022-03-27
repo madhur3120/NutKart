@@ -6,10 +6,11 @@ const { request } = require('http')
 app.listen(3002)
 
 app.set('view engine', 'ejs');
-// app.set('views', __dirname)
 
-app.set('views', path.join(__dirname, 'views'))
+// no need of this because it automatically looks for views folder in current directory for ejs files
+// app.set('views', path.join(__dirname, 'views'))
 
+// used for all static things like css , images , client side javascript
 app.use(express.static(path.join(__dirname, 'public')))
 
 

@@ -8,6 +8,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ecommerce website design</title>
     <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/account-page.css">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,500&family=Roboto&display=swap" rel="stylesheet">
@@ -45,27 +47,24 @@
                 <div class="col-2">
                     <div class="form-container1">
                         <p>ADMIN</p>
-
                         <div class="form-btn1">
-                            <span onclick="login1()">login</span>
-                            <span onclick="register1()">register</span>
+                            <span>login</span>
                             <hr id="indicator1">
                         </div>
 
-                        <form id="loginform1" method="POST" action="/login">
+                        <form id="loginform1" method="POST" action="/admin-page">
                             <input type="text" name="admin_username" placeholder="username">
                             <input type="text" name="admin_password" placeholder="password">
                             <button type="submit" class="btn">login</button>
-                            <!-- <a href="">forgot password</a> -->
                         </form>
 
-                        <form id="regform1" method="POST" action="/register">
+                        <!-- <form id="regform1" method="POST" action="/register">
                             <input type="text" name="admin_username" placeholder="username">
                             <input type="email" name="admin_email" placeholder="email">
                             <input type="text" name="admin_mobile" placeholder="mobile">
                             <input type="password" name="admin_password" placeholder="password">
                             <button type="submit" class="btn">register</button>
-                        </form>
+                        </form> -->
                     </div>
 
                 </div>
