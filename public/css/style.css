@@ -93,7 +93,10 @@ p {
 }
 
 .header {
-    background: radial-gradient(#fff, #f5ea4e);
+    /* background: radial-gradient(#fff, #f5ea4e); */
+    /* background: radial-gradient(#fff, #B8B8B8); */
+    /* background: #fff; */
+    background: url('/images/product_header.jpg');
 }
 
 .header .row {
@@ -330,139 +333,6 @@ h4 {
 #side-padding {
     padding: 0px;
     margin: 0px;
-}
-
-
-/* ----------------------  account page -------------------------- */
-
-.account-page {
-    padding: 50px 0;
-    background: radial-gradient(#fff, #ffd6d6);
-}
-
-.form-container {
-    background: #fff;
-    width: 300px;
-    height: 400px;
-    text-align: center;
-    position: relative;
-    padding: 20px 0;
-    margin: auto;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.form-container1 {
-    background: #fff;
-    width: 300px;
-    height: 400px;
-    text-align: center;
-    position: relative;
-    padding: 20px 0;
-    margin: auto;
-    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.form-container span {
-    font-weight: bold;
-    padding: 0 10px;
-    color: #555;
-    cursor: pointer;
-    width: 100px;
-    display: inline-block;
-}
-
-.form-container1 span {
-    font-weight: bold;
-    padding: 0 10px;
-    color: #555;
-    cursor: pointer;
-    width: 100px;
-    display: inline-block;
-}
-
-.form-btn {
-    display: inline-block;
-}
-
-.form-btn1 {
-    display: inline-block;
-}
-
-.form-container form {
-    max-width: 300px;
-    padding: 0 20px;
-    position: absolute;
-    top: 130px;
-    transition: transform 1s;
-}
-
-.form-container1 form {
-    max-width: 300px;
-    padding: 0 20px;
-    position: absolute;
-    top: 130px;
-    transition: transform 1s;
-}
-
-form input {
-    width: 100%;
-    height: 30px;
-    margin: 10px 0;
-    padding: 0 10px;
-    border: 1px solid #ccc;
-}
-
-form .btn {
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    margin: 10px 0;
-}
-
-form .btn:focus {
-    outline: none;
-}
-
-#loginform {
-    left: -300px;
-}
-
-#regform {
-    left: 0;
-}
-
-#loginform1 {
-    left: -300px;
-}
-
-#regform1 {
-    left: 0;
-}
-
-form a {
-    font-size: 12px;
-}
-
-#indicator {
-    width: 100px;
-    border: none;
-    background: #ff523b;
-    height: 3px;
-    margin-top: 8px;
-    transform: translateX(100px);
-    transition: transform 1s;
-}
-
-#indicator1 {
-    width: 100px;
-    border: none;
-    background: #ff523b;
-    height: 3px;
-    margin-top: 8px;
-    transform: translateX(100px);
-    transition: transform 1s;
 }
 
 

@@ -5,8 +5,8 @@ let urlencodedparser = bodyParser.urlencoded({ extended: false })
 const con = require('./database_connection')
 
 let loggeduser = ""
-
-////////////////////////////////////////////////
+let loggedadmin = ""
+    // ==========================session ===================================//
 
 const mysql = require('mysql')
 const session = require('express-session');
@@ -49,13 +49,58 @@ const isAuth = (req, res, next) => {
     if (req.session.isAuth) {
         next();
     } else {
+        console.log("manu");
         res.redirect('/account')
     }
 }
 
 
-////////////////////////////////////////////////////////////////
+//=============================admin=============================================//
 
+
+router.get("/orders", isAuth, (req, res) => {
+    res.render('orders')
+})
+
+router.get("/admin-page", isAuth, (req, res) => {
+    res.render('admin-page', {
+        admin_name: loggedadmin
+    })
+})
+
+router.get("/admin-logout", isAuth, (req, res) => {
+    req.session.isAuth = false
+    res.render('account')
+})
+
+router.get("/users", isAuth, (req, res) => {
+    res.render('users')
+})
+
+router.post("/admin-page", urlencodedparser, (req, res) => {
+    let admin_username = req.body.admin_username
+    let admin_password = req.body.admin_password
+
+    let sql1 = `select email  from admins where ('${admin_username}' = name ) && ('${admin_password}' = password) `
+
+    con.query(sql1, (err, result1) => {
+        if (err) throw err;
+        if (result1.length == 0) {
+            res.render('account', {
+                name: "incorrect username or password"
+            })
+        } else {
+            req.session.isAuth = true
+            loggedadmin = admin_username
+
+            res.render('admin-page', {
+                admin_name: admin_username
+            })
+        }
+    })
+})
+
+//=========================================================================//
 
 
 router.get("/", (req, res) => {
@@ -149,7 +194,6 @@ router.post("/register", urlencodedparser, function(req, res) {
     let email = req.body.email
     let password = req.body.password
     let mobile = req.body.mobile
-
 
     // let sql1 = `select username , email , password from users where ('${username}' = username) && ('${email}' = email) && ('${password}' = password) `
 
