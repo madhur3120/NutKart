@@ -1,6 +1,162 @@
+/*===============================header================================= */
+
+body {
+    background: url('/images/banner1.jpg');
+    background-size: cover;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* font-family: 'Island Moments', cursive; */
+    font-family: 'Poppins', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+    /* color: #555; */
+}
+
+.container {
+    max-width: 1300px;
+    margin: auto;
+    padding-left: 25px;
+    padding-right: 25px;
+}
+
+p {
+    color: #555;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.col-2 {
+    min-width: 300px;
+    flex-basis: 50%;
+}
+
+.col-2 img {
+    max-width: 100%;
+    padding: 50px 0;
+}
+
+.col-2 h1 {
+    font-size: 50px;
+    line-height: 60px;
+    margin: 25px 0;
+}
+
+.btn {
+    display: inline-block;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 30px;
+    border-radius: 30px;
+    margin: 30px 0;
+    transition: background 0.5sec;
+}
+
+.btn:hover {
+    background: #563434;
+}
+
+.header {
+    /* background: radial-gradient(#fff, #f5ea4e); */
+    /* background: radial-gradient(#fff, #B8B8B8); */
+    /* background: #fff; */
+    /* background: url('/images/product_header.jpg'); */
+}
+
+.header .row {
+    margin-top: 70px;
+}
+
+.menu-icon {
+    width: 28px;
+    margin-left: 20px;
+    display: none;
+}
+
+
+/*-------------------------------- media query-------------------------------------- */
+
+@media only screen and (max-width:800px) {
+    nav ul {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        background: #333;
+        width: 100%;
+        overflow: hidden;
+        transition: max-height 0.5s;
+    }
+    nav ul li {
+        display: block;
+        margin-right: 50px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    nav ul li a {
+        color: #fff;
+    }
+    .menu-icon {
+        display: block;
+        cursor: Pointer;
+    }
+}
+
+
+/* media query for less than 600 size (android devices) */
+
+@media only screen and (max-width:600px) {
+    .row {
+        text-align: center;
+    }
+    .col-2,
+    .col-3,
+    .col-4 {
+        flex-basis: 100%;
+    }
+}
+
+
+/* //====================================form section=======================================// */
+
 .account-page {
     padding: 50px 0;
-    background: radial-gradient(#fff, #ffd6d6);
+    /* background: radial-gradient(#fff, #ffd6d6); */
 }
 
 
@@ -100,15 +256,6 @@ form .btn:focus {
 #regform {
     left: 0;
 }
-
-
-/* #loginform1 {
-    left: -300px;
-}
-
-#regform1 {
-    left: 0;
-} */
 
 form a {
     font-size: 12px;

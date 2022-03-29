@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Responsive Homepage design with Bootstrap and Animate css</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;900&display=swap" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/user-page.css" />
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">NutKart</a>
+                </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/products2">Products</a></li>
+                        <li><a href="#">Blogs</a></li>
+                        <li><a href="/about-page">About Us</a></li>
+                        <li><a href="/contact-page">Contact</a></li>
+                        <li><a href="/user-page">account</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <!-- --------middle section------------------ -->
+        <div class="container2">
+            <!-- <p style="font-size: 40px; margin-left: 25px; font-weight: 500"></p> -->
+            <div class="small-container2">
+                <div class="row">
+                    <div class="col" id="col1">
+                        <img src="images/user9.png" alt="" height="104px" width="95px" />
+
+                        <button id="btn1">Welcome <%= name %></button>
+                    </div>
+                    <div class="col" id="col2">
+                        <img src="images/yourorder.png" alt="" height="104px" width="95px" />
+
+                        <button id="btn2">
+                <a href=" /users " style="text-decoration: none">
+                  YOUR ORDERS
+                </a>
+              </button>
+                    </div>
+                    <div class="col" id="col3">
+                        <img src="images/address2.png " alt=" " height="104px " width="95px " />
+                        <button id="btn3">
+                        <a href="/add-admin " style="text-decoration: none">ADD ADDRESS</a>
+                    </button>
+                    </div>
+                    <div class="col" id="col4">
+                        <img src="images/logout3.png " alt=" " height="104px " width="95px " />
+                        <button id="btn4">
+                        <a href="/admin-logout " style="text-decoration: none">  LOGOUT</a>
+                    </button>
+                    </div>
+                </div>
+                <!-- <div class="row"> -->
+                <!-- <div class="col">
+              <div class="col" id="col5">
+                <img
+                  src="images/orders2.jpg "
+                  alt=" "
+                  height="104px "
+                  width="95px "
+                />
+
+                <button id="btn5">
+                  <a href="/orders " style="text-decoration: none"> ORDERS </a>
+                </button>
+              </div>
+            </div> -->
+                <!-- </div> -->
+            </div>
+        </div>
+    </header>
+
+
+    <!--=================== products section======================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+</body>
+
+<footer>
+    <div class="footer-row">
+        <div class="footer-col">
+            <!-- <img src="images/footer-logo.png" class="logo" height="130px" width="130px"> -->
+            <br>
+            <br>
+
+            <a href="/" style="font-size: 40px;font-weight: 900;color: #fff;">NutKart </a>
+
+        </div>
+        <div class="footer-col">
+            <h3>Office
+                <div class="underline"><span></span></div>
+            </h3>
+            <p>Gyan Circle</p>
+            <p>Satyavedu, Chittoor</p>
+            <p>Andhra Pradesh, PIN 517616, India</p>
+            <p class="email-id">NutKarT@iiits.in</p>
+            <h4>+91 1234567890</h4>
+        </div>
+        <div class="footer-col">
+            <h3>Links
+                <div class="underline"><span></span></div>
+            </h3>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/account">Account</a></li>
+                <li><a href="/contact-page">Contact Us</a></li>
+                <li><a href="/blog-page">Blog</a></li>
+            </ul>
+        </div>
+        <div class="footer-col">
+            <h3>Newsletter
+                <div class="underline"><span></span></div>
+            </h3>
+            <form class="footer-form">
+                <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                <input type="email" placeholder="Enter your email id" requireds>
+                <button type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>                    </button>
+            </form>
+
+            <div class="social">
+                <i class="fa fa-facebook" aria-hidden="true"></i>
+                <i class="fa fa-twitter" aria-hidden="true"></i>
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <!--<hr class="shine">-->
+    <hr class="accessory">
+
+    <p class="copyright">NutKART © 2022 - All Rights Reserved</p>
+</footer>
+
+</html>

@@ -151,12 +151,18 @@ p {
     background: #563434;
 }
 
+
+/* fault here */
+
 .small-container {
     max-width: 1080px;
     margin: auto;
     padding-left: 25px;
     padding-right: 25px;
 }
+
+
+/*    ========           */
 
 .small-container h2 {
     margin-left: -100px;
