@@ -10,6 +10,9 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.6.2/animate.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/footer.css">
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+
 </head>
 
 <body>
@@ -24,15 +27,17 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-                    <a class="navbar-brand" href="#">NutKart</a>
+                    <a class="navbar-brand" href="/">NutKart</a>
+                    <!-- <a class="navbar-brand" href="/"><img src="images/logo-transparent.jpeg" alt="" height="50px" width="50px"></a> -->
+
                 </div>
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         <li><a href="/">Home</a></li>
                         <li><a href="/products">Products</a></li>
-                        <li><a href="#">Blogs</a></li>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Contact</a></li>
+                        <li><a href="/blogs">Blogs</a></li>
+                        <li><a href="/about-page">About Us</a></li>
+                        <li><a href="/contact-page">Contact</a></li>
                         <li><a href="/account">Account</a></li>
                     </ul>
                 </div>
@@ -40,6 +45,8 @@
             </div>
             <!-- /.container-fluid -->
         </nav>
+
+
 
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -89,7 +96,7 @@
                             One Stop Solution for All Dried Fruits
                         </h3>
                         <p class="animated zoomIn" style="animation-delay: 3s">
-                            <a href="#">Products</a>
+                            <a href="/products">Products</a>
                         </p>
                     </div>
                 </div>
@@ -105,6 +112,7 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+
     </header>
     <br>
     <br>
@@ -155,10 +163,68 @@
                 <h4></h4>
             </div>
         </div>
+    </div>
 
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <footer>
+        <div class="footer-row">
+            <div class="footer-col">
+                <!-- <img src="images/footer-logo.png" class="logo" height="130px" width="130px"> -->
+                <br>
+                <br>
+
+                <a href="/" style="font-size: 40px;font-weight: 900;color: #fff;">NutKart </a>
+
+            </div>
+            <div class="footer-col">
+                <h3>Office
+                    <div class="underline"><span></span></div>
+                </h3>
+                <p>Gyan Circle</p>
+                <p>Satyavedu, Chittoor</p>
+                <p>Andhra Pradesh, PIN 517616, India</p>
+                <p class="email-id">NutKarT@iiits.in</p>
+                <h4>+91 1234567890</h4>
+            </div>
+            <div class="footer-col">
+                <h3>Links
+                    <div class="underline"><span></span></div>
+                </h3>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/account">Account</a></li>
+                    <li><a href="/contact-page">Contact Us</a></li>
+                    <li><a href="/blog-page">Blog</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Newsletter
+                    <div class="underline"><span></span></div>
+                </h3>
+                <form class="footer-form">
+                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                    <input type="email" placeholder="Enter your email id" requireds>
+                    <button type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>                    </button>
+                </form>
+
+                <div class="social">
+                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+
+        <!--<hr class="shine">-->
+        <hr class="accessory">
+
+        <p class="copyright">NutKART © 2022 - All Rights Reserved</p>
+    </footer>
 </body>
 
 </html>

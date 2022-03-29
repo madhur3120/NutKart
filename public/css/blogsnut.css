@@ -1,0 +1,68 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+.row {
+    display: inline-grid;
+    row-gap: 50px;
+    column-gap: 50px;
+    grid-template-columns: auto auto auto;
+    padding: 10px;
+}
+
+.container1 {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: white;
+    justify-content: center;
+    background: url('../blogimages/bolgback1.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.col-11 {
+    flex-basis: 25%;
+    padding: 10px;
+    min-width: 200px;
+    min-height: 200px;
+    max-height: auto;
+    margin-bottom: 50px;
+    background-color: #f5f5f5;
+    margin-right: 2px;
+    transition: 0.5s ease;
+}
+
+h4 {
+    padding: 10px;
+}
+
+.col-11 a {
+    color: blue;
+}
+
+.col-11:hover {
+    /* margin: 50px; */
+    /* border: 5px solid #f3f3f3; */
+    /* padding: 50px; */
+    box-shadow: 0 0 20px #696969, 0 0 30px #696969, 0 0 50px #696969;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.col-11 img {
+    display: flex;
+    width: 100%;
+    height: 315px;
+}
+
+
+/* .col-1 img-blog8{
+    max-width: 307px;  
+    height: 315px; 
+} */

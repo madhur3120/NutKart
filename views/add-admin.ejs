@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" initial-scale="1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ecommerce website design</title>
+    <!-- <link rel="stylesheet" href="../css/style.css"> -->
+    <link rel="stylesheet" href="/css/account-page.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,500&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="navbar">
+                <div class="logo">
+                    <!-- <a href="/"><img src="../images/logo.png" width="125px"> </a> -->
+                    <a href="/" style="font-size: 40px;font-weight: 900;">NutKart </a>
+
+                </div>
+                <nav>
+                    <ul id="menu-items">
+                        <li><a href="/home">Home</a></li>
+                        <li><a href="/products">Products</a></li>
+                        <li><a href="/about-page">About</a></li>
+                        <li><a href="/contact-page">Contact</a></li>
+                        <li><a href="/account">Account</a></li>
+                    </ul>
+                </nav>
+
+                <!-- <img src="images/cart.png" width="30px" height="30px"> -->
+                <img src="images/menu.png" class="menu-icon" onclick="menutoggle()">
+            </div>
+        </div>
+    </div>
+
+    <!-- account section -->
+
+    <div class="account-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-2">
+                    <div class="form-container1">
+                        <p>NEW ADMIN</p>
+                        <div class="form-btn1">
+                            <span>Register</span>
+                            <hr id="indicator1">
+                        </div>
+
+                        <form id="regform1" method="POST" action="/admin-page">
+                            <input type="text" name="admin-username" placeholder="username">
+                            <input type="email" name="admin-email" placeholder="email">
+                            <input type="text" name="admin-mobile" placeholder="mobile">
+                            <input type="password" name="admin-password" placeholder="password">
+                            <button type="submit" class="btn">register</button>
+                        </form>
+                    </div>
+
+                </div>
+
+
+                <!-- <div class="col-2">
+                    <div class="form-container">
+                        <p>CUSTOMER</p>
+
+                        <div class="form-btn">
+                            <span onclick="login()">login</span>
+                            <span onclick="register()">register</span>
+                            <hr id="indicator">
+                        </div>
+
+                        <form id="loginform" method="POST" action="/login">
+                            <input type="text" name="username" placeholder="username">
+                            <input type="text" name="password" placeholder="password">
+                            <button type="submit" class="btn">login</button>
+                        </form>
+
+                        <form id="regform" method="POST" action="/register">
+                            <input type="text" name="username" placeholder="username">
+                            <input type="email" name="email" placeholder="email">
+                            <input type="text" name="mobile" placeholder="mobile">
+                            <input type="password" name="password" placeholder="password">
+                            <button type="submit" class="btn">register</button>
+                        </form>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <!--javascript for toggle menu-->
+
+    <script>
+        let menuitems = document.getElementById('menu-items');
+        menuitems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (menuitems.style.maxHeight == "0px") {
+                menuitems.style.maxHeight = "200px";
+            } else {
+                menuitems.style.maxHeight = "0px";
+            }
+        }
+    </script>
+
+    <script>
+        // toggle form
+
+        let loginform = document.getElementById('loginform')
+        let regform = document.getElementById('regform')
+        let indicator = document.getElementById('indicator')
+
+        function register() {
+            regform.style.transform = "translateX(0px)"
+            loginform.style.transform = "translateX(0px)"
+            indicator.style.transform = "translateX(100px)"
+        }
+
+        function login() {
+            regform.style.transform = "translateX(300px)"
+            loginform.style.transform = "translateX(300px)"
+            indicator.style.transform = "translateX(0px)"
+        }
+    </script>
+
+
+
+    <footer>
+        <div style="min-height: 250px" class="footer" id="footer-sub">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>HELP</h5>
+                        <ul>
+                            <li>
+                                <a href="">Previous Orders</a>
+                                <hr />
+                            </li>
+                            <li>
+                                <a href="">HelpDesk</a>
+                                <hr />
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>NutKART</h5>
+                        <ul>
+                            <li>
+                                <a href="">About Us</a>
+                                <hr />
+                            </li>
+                            <li><a href="">Contact Us</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="col-md-4">
+                        <h5>MISC</h5>
+                        <ul>
+                            <li>
+                                <a href="">Products</a>
+                                <hr />
+                            </li>
+                            <li>
+                                <a href="">Blogs</a>
+                                <hr />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <hr style="margin-bottom: 0px; margin-top: 30px; padding: 0px" />
+                <div class="row" id="sub-two">
+                    <div class="col-md-4">
+                        <div class="vertical-line text-center">
+                            <span class="glyphicon glyphicon-map-marker"></span>
+                            <h4>HASSLE FREE SHOPPING</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="vertical-line text-center">
+                            <span class="glyphicon glyphicon-refresh"></span>
+                            <h4>FREE & EASY RETURNS</h4>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div style="margin: 8px" class="text-center">
+                            <span class="glyphicon glyphicon-remove-circle"></span>
+                            <h4 style="color: #6d6c6c">HEALTHY DRY FRUITS</h4>
+                        </div>
+                    </div>
+                </div>
+                <hr style="margin-bottom: 30px; margin-top: 0px; padding: 0px" />
+            </div>
+        </div>
+
+    </footer>
+
+</body>
+
+</html>

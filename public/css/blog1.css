@@ -1,0 +1,132 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    /* margin: 50px; */
+    /* border: 5px solid #f3f3f3; */
+    /* padding: 50px; */
+    /* box-shadow: 0 0 20px #f3f3f3, 0 0 30px #f3f3f3, 0 0 50px #f3f3f3; */
+    transition: 1s ease;
+   
+    background: url(/blogimages/bolgback1.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+}
+.blog{
+    padding: 100px;
+}
+
+.recipe{
+    padding: 100px;
+}
+
+
+body
+{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+}
+
+
+
+p{
+    color: white;
+    font-size: 20px;
+
+}
+
+h1 
+{
+    color: white;
+       text-align: center;
+       font-size: 50px;
+       /* padding-top: 25px; */
+
+}
+
+ul{
+    color: white;
+    font-size: 18px;
+}
+
+h2
+{
+    font-size: 35px; 
+    color: white;
+}
+
+h3{
+    font-size: 30px;
+    color: #fff;
+}
+
+/* .photo{
+    min-width: 200px;
+}
+
+.photo img
+{
+   padding-left: 200px;
+   width: 70%;
+   height:350px;
+   
+} */
+/* 
+.photo {
+    height: 300px;
+    width: 800px;
+    overflow: hidden;
+   }
+.photo img {
+    padding-left: 250px;
+    justify-content: center;
+    height:auto;
+    width: 400px;
+   } */
+
+
+.photo{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    height: 400px;
+    width: 100%;
+    /* padding-left:40%; */
+    margin: 0;
+}
+
+.photo img{
+  width: 350px;
+  height: 350px;
+
+}
+
+
+.photo img:hover{
+    box-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 50px #fff;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+h2{
+    text-align: center;
+}
+
+.recipe{
+ margin-left: 30px;
+}
+
+.youtube{
+    display: flex;
+    justify-content: center;
+    align-content:center ;
+    padding: 25px;
+}

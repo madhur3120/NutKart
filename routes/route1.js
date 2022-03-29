@@ -55,8 +55,12 @@ const isAuth = (req, res, next) => {
 }
 
 
-//=============================admin=============================================//
+//=============================admin================================//
 
+
+router.get("/add-admin", isAuth, (req, res) => {
+    res.render('add-admin')
+})
 
 router.get("/orders", isAuth, (req, res) => {
     res.render('orders')
@@ -106,6 +110,50 @@ router.post("/admin-page", urlencodedparser, (req, res) => {
 router.get("/", (req, res) => {
     req.session.isAuth = false
     res.render('index')
+})
+
+
+
+router.get("/contact-page", (req, res) => {
+    res.render('contact-page')
+})
+
+router.get("/blog1", (req, res) => {
+    res.render('blog1')
+})
+
+router.get("/blog2", (req, res) => {
+    res.render('blog2')
+})
+router.get("/blog3", (req, res) => {
+    res.render('blog3')
+})
+router.get("/blog4", (req, res) => {
+    res.render('blog4')
+})
+router.get("/blog5", (req, res) => {
+    res.render('blog5')
+})
+router.get("/blog6", (req, res) => {
+    res.render('blog6')
+})
+router.get("/blog7", (req, res) => {
+    res.render('blog7')
+})
+router.get("/blog8", (req, res) => {
+    res.render('blog8')
+})
+router.get("/blog9", (req, res) => {
+    res.render('blog9')
+})
+
+router.get("/blogs", (req, res) => {
+    res.render('blogsnut')
+})
+
+
+router.get("/about-page", (req, res) => {
+    res.render('about-page')
 })
 
 router.get("/home", isAuth, (req, res) => {
@@ -158,8 +206,8 @@ router.get("/account", (req, res) => {
 //     })
 // })
 
-router.get("/account2", isAuth, (req, res) => {
-    res.render('account2', {
+router.get("/user-page", isAuth, (req, res) => {
+    res.render('user-page', {
         name: loggeduser
     })
 })
