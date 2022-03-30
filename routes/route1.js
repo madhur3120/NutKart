@@ -147,7 +147,7 @@ router.get("/blog9", (req, res) => {
     res.render('blog9')
 })
 
-router.get("/blogs", (req, res) => {
+router.get("/blog-page", (req, res) => {
     res.render('blogsnut')
 })
 
