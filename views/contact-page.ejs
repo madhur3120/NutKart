@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HELP</title>
+    <title>Contact Us</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -27,7 +27,7 @@
                 </div>
                 <nav>
                     <ul id="menu-items">
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/home">Home</a></li>
                         <li><a href="/products2">Products</a></li>
                         <li><a href="/about-page">About</a></li>
                         <li><a href="/contact-page">Contact</a></li>
@@ -74,24 +74,26 @@
                     </div>
                 </div>
             </div>
+
             <div class="form">
-                <form action="">
+                <form action="/contact-page" id="form" method="GET">
                     <h3>Send Message</h3>
                     <div class="inputbox">
-                        <input type="text" name="" required="required">
+                        <input type="text" name="" required="required" id="name">
                         <span>Full name</span>
                     </div>
                     <div class="inputbox">
-                        <input type="text" name="" required="required">
+                        <input type="email" name="" required="required" id="email">
                         <span>Email</span>
                     </div>
                     <div class="inputbox">
-                        <textarea required="required"></textarea>
+                        <textarea required="required" id="message"></textarea>
                         <span>Type your Message...</span>
                     </div>
                     <div class="inputbox">
                         <input type="submit" name="" value="Send">
                     </div>
+                    <div id="error"></div>
                 </form>
             </div>
 
@@ -101,6 +103,38 @@
 
 
 
+    <script>
+        const form = document.getElementById('form')
+        const errorElement = document.getElementById('error')
+        const email = document.getElementById('email')
+
+
+        form.addEventListener('submit', (e) => {
+            let messages = []
+
+
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+
+            } else {
+                messages.push("You have entered an invalid email address!")
+            }
+        })
+    </script>
+
+    <!--javascript for toggle menu-->
+
+    <script>
+        let menuitems = document.getElementById('menu-items');
+        menuitems.style.maxHeight = "0px";
+
+        function menutoggle() {
+            if (menuitems.style.maxHeight == "0px") {
+                menuitems.style.maxHeight = "200px";
+            } else {
+                menuitems.style.maxHeight = "0px";
+            }
+        }
+    </script>
 
 
 </body>
@@ -130,8 +164,8 @@
                 <div class="underline"><span></span></div>
             </h3>
             <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/account">Account</a></li>
+                <li><a href="/home">Home</a></li>
+                <li><a href="/user-page">Account</a></li>
                 <li><a href="/contact-page">Contact Us</a></li>
                 <li><a href="/blog-page">Blog</a></li>
             </ul>
