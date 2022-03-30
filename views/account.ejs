@@ -6,13 +6,16 @@
     <meta name="viewport" content="width=device-width" initial-scale="1.0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ecommerce website design</title>
+    <title>Account</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,500&family=Roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/footer.css">
+    <!-- <link rel="stylesheet" href="css/footer.css"> -->
     <!-- <link rel="stylesheet" href="../css/style.css"> -->
     <link rel="stylesheet" href="/css/account-page.css">
+
+    <!-- <script defer src="/js/validation.js"></script> -->
 
 </head>
 
@@ -55,10 +58,11 @@
                         </div>
 
                         <form id="loginform1" method="POST" action="/admin-page">
-                            <input type="text" name="admin_username" placeholder="username">
-                            <input type="text" name="admin_password" placeholder="password">
+                            <input type="text" name="admin_username" placeholder="admin_username">
+                            <input type="text" name="admin_password" placeholder="admin_password">
                             <button type="submit" class="btn">login</button>
                         </form>
+
                     </div>
 
                 </div>
@@ -76,16 +80,16 @@
 
                         <form id="loginform" method="POST" action="/login">
                             <input type="text" name="username" placeholder="username">
-                            <input type="text" name="password" placeholder="password">
+                            <input type="password" name="password" id="password" placeholder="password">
                             <button type="submit" class="btn">login</button>
-                            <!-- <a href="">forgot password</a> -->
                         </form>
 
                         <form id="regform" method="POST" action="/register">
-                            <input type="text" name="username" placeholder="username">
-                            <input type="email" name="email" placeholder="email">
-                            <input type="text" name="mobile" placeholder="mobile">
-                            <input type="password" name="password" placeholder="password">
+                            <div id="error"></div>
+                            <input id="username" type="text" name="username" placeholder="username">
+                            <input id="email" type="email" name="email" placeholder="email">
+                            <input id="mobile" type="text" name="mobile" placeholder="mobile">
+                            <input id="password" type="password" name="password" placeholder="password">
                             <button type="submit" class="btn">register</button>
                         </form>
                     </div>
@@ -94,7 +98,46 @@
         </div>
     </div>
 
+
+
+
+
     <!--javascript for toggle menu-->
+
+
+    <script>
+        const password = document.getElementById('password')
+        const regformx = document.getElementById('regform')
+        const errorElement = document.getElementById('error')
+        const email = document.getElementById('email')
+        const username = document.getElementById('username')
+
+
+        regformx.addEventListener('submit', (e) => {
+            let messages = []
+
+            if (username.value === '' || username.value == null) {
+                messages.push('Name is required')
+            }
+
+            if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email.value)) {
+
+            } else {
+                messages.push("You have entered an invalid email address!")
+            }
+
+
+            if (password.value.length <= 6) {
+                messages.push('Password must be longer than 6 characters')
+            }
+
+            if (password.value.length >= 20) {
+                messages.push('Password must be less than 20 characters')
+            }
+
+        })
+    </script>
+
 
     <script>
         let menuitems = document.getElementById('menu-items');
@@ -107,11 +150,8 @@
                 menuitems.style.maxHeight = "0px";
             }
         }
-    </script>
 
-    <script>
         // toggle form
-
         let loginform = document.getElementById('loginform')
         let regform = document.getElementById('regform')
         let indicator = document.getElementById('indicator')
@@ -129,61 +169,6 @@
         }
     </script>
 
-    <footer>
-        <div class="footer-row">
-            <div class="footer-col">
-                <!-- <img src="images/footer-logo.png" class="logo" height="130px" width="130px"> -->
-                <br>
-                <br>
-
-                <a href="/" style="font-size: 40px;font-weight: 900;color: #fff;">NutKart </a>
-
-            </div>
-            <div class="footer-col">
-                <h3>Office
-                    <div class="underline"><span></span></div>
-                </h3>
-                <p>Gyan Circle</p>
-                <p>Satyavedu, Chittoor</p>
-                <p>Andhra Pradesh, PIN 517616, India</p>
-                <p class="email-id">NutKarT@iiits.in</p>
-                <h4>+91 1234567890</h4>
-            </div>
-            <div class="footer-col">
-                <h3>Links
-                    <div class="underline"><span></span></div>
-                </h3>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/account">Account</a></li>
-                    <li><a href="/contact-page">Contact Us</a></li>
-                    <li><a href="/blog-page">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Newsletter
-                    <div class="underline"><span></span></div>
-                </h3>
-                <form class="footer-form">
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    <input type="email" placeholder="Enter your email id" requireds>
-                    <button type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>                    </button>
-                </form>
-
-                <div class="social">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </div>
-            </div>
-        </div>
-
-        <!--<hr class="shine">-->
-        <hr class="accessory">
-
-        <p class="copyright">NutKART © 2022 - All Rights Reserved</p>
-    </footer>
 </body>
 
 </html>
