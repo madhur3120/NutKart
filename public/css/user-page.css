@@ -113,11 +113,8 @@ header .carousel-inner .item {
 /* -------------------navbar end----------------------- */
 
 body {
-    height: 100vh;
-}
-
-header {
     background-image: url("/images/banner2.jpg");
+    height: 100vh;
     background-size: cover;
 }
 
