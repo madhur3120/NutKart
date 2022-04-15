@@ -44,7 +44,6 @@
             </div>
         </div>
     </div>
-
     <br>
 
     <div class="small-container">
@@ -54,36 +53,53 @@
             <br />
             <br>
             <br>
-            <select name="" id="">
-          <option value="">defaut sorting</option>
-          <option value="">sort by price</option>
-          <option value="">sort by popularity</option>
-          <option value="">sort by rating</option>
-          <option value="">sort by sale</option>
-          <!-- -----------work left here for css--------- -->
-        </select>
+            <a href="/low-to-high" id="sort-button1" class="sorting-button" style="color: black;">low-to-high</a>
+            <a href="/high-to-low" id="sort-button2" class="sorting-button" style="color: black;">high-to-low</a>
+
         </div>
         <div class="row">
             <div class="col-4">
                 <!-- <a href="/productdetail/granola-mix"> <img src="images/granola-mix.jpg" /> </a> -->
-                <a href="/productdetail/<%= product_name %>"> <img src="<%= imgsrc %>" /> </a>
-                <h4>Granola Mix</h4>
-                <p>Rs. 120/-</p>
+                <a href="/productdetail/<%= products[0].product_name %>"> <img src="<%= imgsrc[0].img_src1 %>" /> </a>
+                <h4>
+                    <%= products[0].product_name %>
+                </h4>
+                <p>
+                    Rs
+                    <%= products[0].price  %>/-
+                </p>
             </div>
             <div class="col-4">
-                <a href="/productdetail/happilo-cashew"><img src="images/happilo-cashew.jpg" /></a>
-                <h4>Happilo Cashews</h4>
-                <p>Rs. 250/-</p>
+                <!-- <a href="/productdetail/happilo-cashew"><img src="images/happilo-cashew.jpg" /></a> -->
+                <a href="/productdetail/<%= products[1].product_name %>"><img src="<%= imgsrc[1].img_src1 %>" /></a>
+                <h4>
+                    <%= products[1].product_name %>
+                </h4>
+                <p>
+                    Rs
+                    <%= products[1].price  %>/-
+                </p>
+            </div>
+
+            <div class="col-4">
+                <a href="/productdetail/<%= products[2].product_name %>"><img src="<%= imgsrc[2].img_src1 %>" alt="" /></a>
+                <h4>
+                    <%= products[2].product_name %>
+                </h4>
+                <p>
+                    Rs
+                    <%= products[2].price  %>/-
+                </p>
             </div>
             <div class="col-4">
-                <a href="/productdetail/happilo-gojiberries2"><img src="images/happilo-gojiberries2.jpg" alt="" /></a>
-                <h4>Happilo gojiberries</h4>
-                <p>Rs. 350/-</p>
-            </div>
-            <div class="col-4">
-                <a href="/productdetail/happilo-pista1"><img src="images/happilo-pista1.jpg" alt="" /></a>
-                <h4>Happilo Pista</h4>
-                <p>Rs. 380/-</p>
+                <a href="/productdetail/<%= products[3].product_name %>"><img src="<%= imgsrc[3].img_src1 %>" alt="" /></a>
+                <h4>
+                    <%= products[3].product_name %>
+                </h4>
+                <p>
+                    Rs
+                    <%= products[3].price  %>/-
+                </p>
             </div>
         </div>
     </div>
@@ -91,7 +107,7 @@
     <div class="small-container">
         <div class="row">
             <div class="col-4">
-                <a href="/productdetail/happilo-pista2"><img src="images/happilo-pista2.jpg" alt="" /></a>
+                <a href="/productdetail/happilo-pista2"> <img src="images/happilo-pista2.jpg" alt="" /></a>
 
                 <h4>Happilo Rasin</h4>
                 <p>Rs. 380/-</p>
@@ -153,10 +169,6 @@
                 menuitems.style.maxHeight = "0px";
             }
         }
-
-        // image changing using data base
-
-        // document.getElementById('product_image')
     </script>
 
     <!-- -----------footer--------- -->

@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/footer.css">
     <link rel="stylesheet" href="css/contact-page.css">
-
-
 </head>
 
 <body>
@@ -76,7 +74,7 @@
             </div>
 
             <div class="form">
-                <form action="/contact-page" id="form" method="GET">
+                <form action="/contact-page" id="form" method="get">
                     <h3>Send Message</h3>
                     <div class="inputbox">
                         <input type="text" name="" required="required" id="name">
@@ -118,6 +116,12 @@
             } else {
                 messages.push("You have entered an invalid email address!")
             }
+
+            if (messages.length > 0) {
+                e.preventDefault
+                errorElement.innerText = messages.join(' , ')
+            }
+
         })
     </script>
 

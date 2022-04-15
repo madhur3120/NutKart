@@ -14,6 +14,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,500&family=Roboto&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="../css/footer.css">
+
 </head>
 
 <body>
@@ -25,11 +26,11 @@
                 </div>
                 <nav>
                     <ul id="menu-items">
-                        <li><a href="/home">Home</a></li>
-                        <li><a href="/products2">Products</a></li>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/products">Products</a></li>
                         <li><a href="/about-page">About</a></li>
                         <li><a href="/contact-page">Contact</a></li>
-                        <li><a href="/user-page">Account</a></li>
+                        <li><a href="/account">Account</a></li>
                     </ul>
                 </nav>
 
@@ -43,16 +44,16 @@
     <div class="small-container single-product">
         <div class="row">
             <div class="col-2">
-                <img src="<%= imgsrc %>" width="100%" id="ProductImg" />
+                <img src="<%= imgsrc %>" width="80%" id="ProductImg" />
                 <div class="small-img-row">
                     <div class="small-img-col">
-                        <img src="images/nutty mixedberries2.jpg" class="small-img" />
+                        <img src="" class="small-img" />
                     </div>
                     <div class="small-img-col">
-                        <img src="images/nutty mixedberries.jpg" class="small-img" />
+                        <img src="" class="small-img" />
                     </div>
                     <div class="small-img-col">
-                        <img src="images/nutty mixedberries3.jpg" class="small-img" />
+                        <img src="" class="small-img" />
                     </div>
                 </div>
             </div>
@@ -66,7 +67,7 @@
             <option>1 kilogram</option>
           </select>
                 <input type="number" value="1" />
-                <a href="/cart" class="btn">Add to Cart</a>
+                <a href="/add-to-cart" id="addtocart" class="btn">Add to Cart</a>
 
                 <h3>Product Details <i class="fa fa-indent"></i></h3>
                 <br />
@@ -90,27 +91,35 @@
     <div class="small-container">
         <div class="row">
             <div class="col-4">
-                <img src="images/hapillo rasin.jpg" id="abc" alt="" />
+                <img src="../images/happilo-raisin.jpg" id="abc" alt="" />
                 <h4>Happilo Rasin</h4>
                 <p>Rs. 380/-</p>
             </div>
             <div class="col-4">
-                <img src="images/nutty mixedberries.jpg" height="250px" alt="" />
+                <img src="../images/nutty-mixedberries.jpg" height="250px" alt="" />
                 <h4>Nutty Mixedberries</h4>
                 <p>Rs. 400/-</p>
             </div>
             <div class="col-4">
-                <img src="images/nutty sports.jpg" alt="" />
+                <img src="../images/nutty-sports.jpg" alt="" />
                 <h4>Nutty Sports</h4>
                 <p>Rs. 420/-</p>
             </div>
             <div class="col-4">
-                <img src="images/pistachio-sld1.png" alt="" />
+                <img src="../images/nutty-sports2.jpg" alt="" />
                 <h4>Pistachio</h4>
                 <p>Rs. 350/-</p>
             </div>
         </div>
     </div>
+
+
+
+
+
+
+
+
 
     <!--javascript for toggle menu-->
 
@@ -127,8 +136,18 @@
         }
     </script>
 
+
     <!-- --js for product gallery-- -->
     <script>
+        ////////////////////////
+        let string1 = '<%= imgsrc %>'
+        string1 = string1.replace("/images/", "")
+        string1 = string1.replace(".jpg", "")
+        let string2 = "/add-to-cart/" + string1
+        document.getElementById('addtocart').href = string2;
+        /////////////////////////
+
+
         let ProductImg = document.getElementById("ProductImg");
         let SmallImg = document.getElementsByClassName("small-img");
 
@@ -142,6 +161,9 @@
             ProductImg.src = SmallImg[2].src;
         };
     </script>
+
+
+
 
     <!-- -----------footer--------- -->
 
