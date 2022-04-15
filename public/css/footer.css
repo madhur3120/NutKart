@@ -185,3 +185,8 @@ hr {
         flex-basis: 100%;
     }
 }
+
+p,
+h4 {
+    color: #fff;
+}

@@ -24,31 +24,20 @@
                 mobile
             </th>
         </tr>
-        <tr>
-            <td>pratik</td>
-            <td>pratik.b20</td>
-            <td>892308537687</td>
-        </tr>
-        <tr>
-            <td>pratik</td>
-            <td>pratik.b20</td>
-            <td>892308537687</td>
-        </tr>
-        <tr>
-            <td>pratik</td>
-            <td>pratik.b20</td>
-            <td>892308537687</td>
-        </tr>
-        <tr>
-            <td>pratik</td>
-            <td>pratik.b20</td>
-            <td>892308537687</td>
-        </tr>
-        <tr>
-            <td>pratik</td>
-            <td>pratik.b20</td>
-            <td>892308537687</td>
-        </tr>
+        <% usersdata.forEach(function (user) { %>
+            <tr>
+                <td>
+                    <%= user.username %>
+                </td>
+                <td>
+                    <%= user.email %>
+                </td>
+                <td>
+                    <%= user.mobile %>
+                </td>
+
+            </tr>
+            <% }) %>
     </table>
 
 </body>

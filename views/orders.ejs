@@ -25,107 +25,21 @@
                 poductname
             </th>
         </tr>
-        <tr>
-            <td>pratik</td>
-            <td>pratik.b20</td>
-            <td>almonds</td>
-        </tr>
-        <tr>
-            <td>pratik</td>
-            <td>pratik.b20</td>
-            <td>almonds</td>
-        </tr>
-        <tr>
-            <td>pratik</td>
-            <td>pratik.b20</td>
-            <td>almonds</td>
-        </tr>
-        <tr>
-            <td>pratik</td>
-            <td>pratik.b20</td>
-            <td>almonds</td>
-        </tr>
-        <tr>
-            <td>pratik</td>
-            <td>pratik.b20</td>
-            <td>almonds</td>
-        </tr>
+
+        <% ordersdata.forEach(function (order) { %>
+            <tr>
+                <td>
+                    <%= order.username %>
+                </td>
+                <td>
+                    <%= order.product_name %>
+                </td>
+
+            </tr>
+            <% }) %>
     </table>
 
 
-
-    <footer>
-        <div style="min-height: 250px" class="footer" id="footer-sub">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-4">
-                        <h5>HELP</h5>
-                        <ul>
-                            <li>
-                                <a href="/orders">Previous Orders</a>
-                                <hr />
-                            </li>
-                            <li>
-                                <a href="">HelpDesk</a>
-                                <hr />
-                            </li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h5>NutKART</h5>
-                        <ul>
-                            <li>
-                                <a href="/about-page">About Us</a>
-                                <hr />
-                            </li>
-                            <li><a href="/contact-page">Contact Us</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-md-4">
-                        <h5>MISC</h5>
-                        <ul>
-                            <li>
-                                <a href="/products2">Products</a>
-                                <hr />
-                            </li>
-                            <li>
-                                <a href="/blog-page">Blogs</a>
-                                <hr />
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-
-                <hr style="margin-bottom: 0px; margin-top: 30px; padding: 0px" />
-                <div class="row" id="sub-two">
-                    <div class="col-md-4">
-                        <div class="vertical-line text-center">
-                            <span class="glyphicon glyphicon-map-marker"></span>
-                            <h4>HASSLE FREE SHOPPING</h4>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div class="vertical-line text-center">
-                            <span class="glyphicon glyphicon-refresh"></span>
-                            <h4>FREE & EASY RETURNS</h4>
-                        </div>
-                    </div>
-
-                    <div class="col-md-4">
-                        <div style="margin: 8px" class="text-center">
-                            <span class="glyphicon glyphicon-remove-circle"></span>
-                            <h4 style="color: #6d6c6c">HEALTHY DRY FRUITS</h4>
-                        </div>
-                    </div>
-                </div>
-                <hr style="margin-bottom: 30px; margin-top: 0px; padding: 0px" />
-            </div>
-        </div>
-
-    </footer>
 </body>
 
 </html>

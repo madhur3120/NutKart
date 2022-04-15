@@ -49,69 +49,26 @@
                 <th>Subtotal</th>
             </tr>
 
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="/images/greenfinity-roasted-pistachio1.jpg" />
-                        <div>
-                            <p>Greenfinity Roasted Pistachio</p>
-                            <small>Price : Rs. 250/-</small>
-                            <br />
-                            <a href="">Remove</a>
+            <% cart_items.forEach(function (items) { %>
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                            <img src="/<%= items.img_src1 %>" />
+                            <div>
+                                <p>
+                                    <%= items.product_name %>
+                                </p>
+                                <small>Price : Rs. 150/-</small>
+                                <br />
+                                <a href="/remove-from-cart/<%= items.product_name %>">Remove</a>
+                            </div>
                         </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1" /></td>
-                <td>Rs. 250/-</td>
-            </tr>
+                    </td>
+                    <td><input type="number" value="1" /></td>
+                    <td>Rs. 150/-</td>
 
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="/images/tata-almonds1.jpg" />
-                        <div>
-                            <p>Happilo Cashew</p>
-                            <small>Price : Rs. 350/-</small>
-                            <br />
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1" /></td>
-                <td>Rs. 350/-</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="/images/happilo-raisin.jpg" />
-                        <div>
-                            <p>Happilo Raisin</p>
-                            <small>Price : Rs. 250/-</small>
-                            <br />
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1" /></td>
-                <td>Rs. 250/-</td>
-            </tr>
-
-            <tr>
-                <td>
-                    <div class="cart-info">
-                        <img src="/images/happilo-cashew.jpg" />
-                        <div>
-                            <p>Happilo Cashew</p>
-                            <small>Price : Rs. 150/-</small>
-                            <br />
-                            <a href="">Remove</a>
-                        </div>
-                    </div>
-                </td>
-                <td><input type="number" value="1" /></td>
-                <td>Rs. 150/-</td>
-            </tr>
+                </tr>
+                <% }) %>
         </table>
     </div>
 

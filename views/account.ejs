@@ -11,11 +11,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,500&family=Roboto&display=swap" rel="stylesheet">
-    <!-- <link rel="stylesheet" href="css/footer.css"> -->
-    <!-- <link rel="stylesheet" href="../css/style.css"> -->
     <link rel="stylesheet" href="/css/account-page.css">
 
-    <!-- <script defer src="/js/validation.js"></script> -->
 
 </head>
 
@@ -58,8 +55,9 @@
                         </div>
 
                         <form id="loginform1" method="POST" action="/admin-page">
-                            <input type="text" name="admin_username" placeholder="admin_username">
-                            <input type="text" name="admin_password" placeholder="admin_password">
+                            <div id="admin_error_login"></div>
+                            <input type="text" name="admin_username" id="admin_username" placeholder="admin_username">
+                            <input type="text" name="admin_password" id="admin_password" placeholder="admin_password">
                             <button type="submit" class="btn">login</button>
                         </form>
 
@@ -79,17 +77,18 @@
                         </div>
 
                         <form id="loginform" method="POST" action="/login">
-                            <input type="text" name="username" placeholder="username">
-                            <input type="password" name="password" id="password" placeholder="password">
+                            <div id="error_login"></div>
+                            <input type="text" name="login_username" id="login_username" placeholder="username">
+                            <input type="password" name="login_password" id="login_password" placeholder="password">
                             <button type="submit" class="btn">login</button>
                         </form>
 
                         <form id="regform" method="POST" action="/register">
-                            <div id="error"></div>
-                            <input id="username" type="text" name="username" placeholder="username">
+                            <div id="error_register"></div>
+                            <input id="register_username" type="text" name="register_username" placeholder="username">
                             <input id="email" type="email" name="email" placeholder="email">
                             <input id="mobile" type="text" name="mobile" placeholder="mobile">
-                            <input id="password" type="password" name="password" placeholder="password">
+                            <input id="register_password" type="password" name="register_password" placeholder="password">
                             <button type="submit" class="btn">register</button>
                         </form>
                     </div>
@@ -101,22 +100,33 @@
 
 
 
-
-    <!--javascript for toggle menu-->
-
-
     <script>
-        const password = document.getElementById('password')
+        const register_password = document.getElementById('register_password')
         const regformx = document.getElementById('regform')
-        const errorElement = document.getElementById('error')
+        const error_register = document.getElementById('error_register')
         const email = document.getElementById('email')
-        const username = document.getElementById('username')
+        const register_username = document.getElementById('register_username')
+        const mobile = document.getElementById('mobile')
 
+
+        const login_password = document.getElementById('login_password')
+        const error_login = document.getElementById('error_login')
+        const login_username = document.getElementById('login_username')
+        const loginx = document.getElementById('loginform')
+
+        const admin_password = document.getElementById('admin_password')
+        const admin_error_login = document.getElementById('admin_error_login')
+        const admin_username = document.getElementById('admin_username')
+        const login_form_admin = document.getElementById('loginform1')
+
+
+
+        //  customer register validation
 
         regformx.addEventListener('submit', (e) => {
             let messages = []
 
-            if (username.value === '' || username.value == null) {
+            if (register_username.value === '' || register_username.value == null) {
                 messages.push('Name is required')
             }
 
@@ -126,18 +136,81 @@
                 messages.push("You have entered an invalid email address!")
             }
 
+            if (/^\d{10}$/.test(mobile.value)) {
 
-            if (password.value.length <= 6) {
+            } else {
+                messages.push("invalid mobile number")
+            }
+
+            if (register_password.value.length <= 6) {
                 messages.push('Password must be longer than 6 characters')
             }
 
-            if (password.value.length >= 20) {
+            if (register_password.value.length >= 20) {
                 messages.push('Password must be less than 20 characters')
+            }
+
+
+            if (messages.length > 0) {
+                console.log("length");
+                e.preventDefault()
+                error_register.innerText = messages.join(' , ')
+            }
+
+        })
+
+        // customer login validation
+
+        loginx.addEventListener('submit', (e) => {
+            let messages = []
+
+            if (login_username.value === '' || login_username.value == null) {
+                messages.push('Name is required')
+            }
+
+            if (login_password.value.length <= 6) {
+                messages.push('Password must be longer than 6 characters')
+            }
+
+            if (login_password.value.length >= 20) {
+                messages.push('Password must be less than 20 characters')
+            }
+
+            if (messages.length > 0) {
+                console.log("length");
+                e.preventDefault()
+                error_login.innerText = messages.join(' , ')
+            }
+
+        })
+
+        // admin login validation 
+
+        login_form_admin.addEventListener('submit', (e) => {
+            let messages = []
+
+            if (admin_username.value === '' || admin_username.value == null) {
+                messages.push('Name is required')
+            }
+
+            if (admin_password.value.length <= 6) {
+                messages.push('Password must be longer than 6 characters')
+            }
+
+            if (admin_password.value.length >= 20) {
+                messages.push('Password must be less than 20 characters')
+            }
+
+            if (messages.length > 0) {
+                console.log("length");
+                e.preventDefault()
+                admin_error_login.innerText = messages.join(' , ')
             }
 
         })
     </script>
 
+    <!--javascript for toggle menu-->
 
     <script>
         let menuitems = document.getElementById('menu-items');
