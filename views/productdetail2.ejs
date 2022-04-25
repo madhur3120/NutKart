@@ -26,7 +26,7 @@
                 </div>
                 <nav>
                     <ul id="menu-items">
-                        <li><a href="/">Home</a></li>
+                        <li><a href="/home">Home</a></li>
                         <li><a href="/products2">Products</a></li>
                         <li><a href="/about-page">About</a></li>
                         <li><a href="/contact-page">Contact</a></li>
@@ -94,33 +94,43 @@
     <div class="small-container">
         <div class="row">
             <div class="col-4">
-                <img src="../images/happilo-raisin.jpg" id="abc" alt="" />
-                <h4>Happilo Rasin</h4>
-                <p>Rs. 380/-</p>
+                <img src="/<%= products[0].img_src1%>" id="" alt="" />
+                <h4>
+                    <%= products[0].product_name%>
+                </h4>
+                <p>Rs.
+                    <%= products[0].price%>
+                </p>
             </div>
             <div class="col-4">
-                <img src="../images/nutty-mixedberries.jpg" height="250px" alt="" />
-                <h4>Nutty Mixedberries</h4>
-                <p>Rs. 400/-</p>
+                <img src="/<%= products[1].img_src1%>" height="250px" alt="" />
+                <h4>
+                    <%= products[1].product_name%>
+                </h4>
+                <p>Rs.
+                    <%= products[1].price%>
+                </p>
             </div>
             <div class="col-4">
-                <img src="../images/nutty-sports.jpg" alt="" />
-                <h4>Nutty Sports</h4>
-                <p>Rs. 420/-</p>
+                <img src="/<%= products[2].img_src1%>" alt="" />
+                <h4>
+                    <%= products[2].product_name%>
+                </h4>
+                <p>Rs.
+                    <%= products[2].price%>
+                </p>
             </div>
             <div class="col-4">
-                <img src="../images/nutty-sports2.jpg" alt="" />
-                <h4>Pistachio</h4>
-                <p>Rs. 350/-</p>
+                <img src="/<%= products[3].img_src1%>" alt="" />
+                <h4>
+                    <%= products[3].product_name%>
+                </h4>
+                <p>Rs.
+                    <%= products[3].price%>
+                </p>
             </div>
         </div>
     </div>
-
-
-
-
-
-
 
 
 
