@@ -186,7 +186,6 @@ hr {
     }
 }
 
-p,
-h4 {
+.footer-row p h4 {
     color: #fff;
 }

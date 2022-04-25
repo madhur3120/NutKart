@@ -10,6 +10,9 @@ let loggedadmin = ""
 
 const mysql = require('mysql')
 const session = require('express-session');
+const { append } = require('express/lib/response')
+const { urlencoded } = require('express')
+const res = require('express/lib/response')
 const MySQLStore = require('express-mysql-session')(session);
 
 let options = {
@@ -241,15 +244,6 @@ router.get("/low-to-high", (req, res) => {
 
                 imgsrc: products,
                 products: products
-                    // product_name: result[0].product_name,
-                    // imgsrc1: result[1].img_src1,
-                    // product_name1: result[1].product_name,
-                    // imgsrc2: result[2].img_src1,
-                    // product_name2: result[2].product_name,
-                    // imgsrc3: result[3].img_src1,
-                    // product_name3: result[3].product_name
-                    // imgsrc2: result[0].img_src3
-                    // imgsrc3: result[0].img_src1
             })
         })
         // res.render('products')
@@ -266,21 +260,11 @@ router.get("/high-to-low", (req, res) => {
             if (err) {
                 throw err
             }
-            // console.log(result);
             let products = result
             res.render('products', {
 
                 imgsrc: products,
                 products: products
-                    // product_name: result[0].product_name,
-                    // imgsrc1: result[1].img_src1,
-                    // product_name1: result[1].product_name,
-                    // imgsrc2: result[2].img_src1,
-                    // product_name2: result[2].product_name,
-                    // imgsrc3: result[3].img_src1,
-                    // product_name3: result[3].product_name
-                    // imgsrc2: result[0].img_src3
-                    // imgsrc3: result[0].img_src1
             })
         })
         // res.render('products')
@@ -291,7 +275,7 @@ router.get("/high-to-low", (req, res) => {
 
 router.get("/products", (req, res) => {
 
-    sql1 = "select * from products ORDER BY price DESC"
+    sql1 = "select * from products ;"
     con.query(sql1, (err, result) => {
         if (err) {
             throw err
@@ -299,19 +283,121 @@ router.get("/products", (req, res) => {
         // console.log(result);
         let products = result
         res.render('products', {
-
             imgsrc: products,
             products: products
-                // product_name: result[0].product_name,
-                // imgsrc1: result[1].img_src1,
-                // product_name1: result[1].product_name,
-                // imgsrc2: result[2].img_src1,
-                // product_name2: result[2].product_name,
-                // imgsrc3: result[3].img_src1,
-                // product_name3: result[3].product_name
-                // imgsrc2: result[0].img_src3
-                // imgsrc3: result[0].img_src1
+        })
+    })
+})
 
+
+router.get("/products2", isAuth, (req, res) => {
+
+    sql1 = "select * from products ORDER BY price DESC"
+    con.query(sql1, (err, result) => {
+        if (err) {
+            throw err
+        }
+        // console.log(result);
+        let products = result
+        res.render('products2', {
+            imgsrc: products,
+            products: products,
+            name: loggeduser
+        })
+    })
+})
+
+
+
+router.post("/search", urlencodedparser, function(req, res) {
+    let category = req.body.searchproduct
+        // category = category.toLowerCase();
+
+
+    if ((category == 'cashew') || (category == 'dates') || (category == 'cashews') || (category == 'date') || (category == 'almond') || (category == 'almonds') || (category == 'pista') || (category == 'mixture') || (category == 'fruits') || (category == 'berries') || (category == 'nuts') || (category == 'happilo') || (category == 'nutty') || (category == 'paperboat')) {
+        if (category == 'fruit') {
+            category = 'fruits'
+        } else if (category == 'almond') {
+            category = 'almonds'
+        } else if (category == 'mixtures') {
+            category = 'mixture'
+        } else if (category == 'cashew') {
+            category = 'cashews'
+        } else if (category == 'berrie') {
+            category = 'berries'
+        } else if (category == 'date') {
+            category = 'dates'
+        } else if (category == 'pistas') {
+            category = 'pista'
+        }
+
+        if ((category == 'happilo') || (category == 'paperboat') || (category == 'nuty')) {
+            let sql = `select * from products where brand  = '${category}' ;`
+            console.log(category);
+            con.query(sql, (err, result) => {
+                if (err) throw err;
+                let products = result
+                res.render('products2', {
+                    imgsrc: products,
+                    products: products,
+                    name: loggeduser
+                })
+            })
+        } else {
+            let sql = `select * from products where category  = '${category}' ;`
+            console.log(category);
+            con.query(sql, (err, result) => {
+                if (err) throw err;
+                let products = result
+                res.render('products2', {
+                    imgsrc: products,
+                    products: products,
+                    name: loggeduser
+                })
+            })
+        }
+
+    } else {
+        let sql1 = "select * from products ;"
+        con.query(sql1, (err, result) => {
+            if (err) {
+                throw err
+            }
+            // console.log(result);
+            let products = result
+            res.render('products2', {
+                imgsrc: products,
+                products: products,
+                name: loggeduser
+            })
+        })
+    }
+
+})
+
+
+router.get("/checkout", (req, res) => {
+    let sql = `select * from current_users;`
+    con.query(sql, (err, result) => {
+        if (err) throw err;
+        loggeduser = result[0].current_user
+        let username = loggeduser
+        let sql1 = `select DISTINCT username , product_name , product_price  from cart where '${username}' = username ;`
+        con.query(sql1, (err, result1) => {
+            if (err) throw err;
+            let finalresult = result1
+            let total = 0
+            let products = ""
+            finalresult.forEach(element => {
+                total += element.product_price
+                products += element.product_name
+            });
+
+            let sql2 = `insert into orders values ('${username}','${products}','${total}');`
+            con.query(sql2, (err, result2) => {
+                if (err) throw err;
+                res.render('order-placed')
+            })
         })
     })
 })
@@ -328,6 +414,7 @@ router.get("/add-to-cart/:x", (req, res) => {
         let img_src1 = "images/" + product_name + ".jpg"
         let product_price = 0
 
+        console.log(product_name);
         let sql1 = `select * from products where '${product_name}' = product_name ;`
         con.query(sql1, (err, result) => {
             console.log(result);
@@ -341,18 +428,15 @@ router.get("/add-to-cart/:x", (req, res) => {
             })
         })
 
-        // console.log(product_price);
 
         let productId = req.params.x;
-        // console.log(productId);
 
-        let sqlr = `select * from cart where username = '${username}'`
+        let sqlr = `select DISTINCT username  ,product_name , product_price , img_src1 from cart where username = '${username}'`
         con.query(sqlr, (err, resultr) => {
             if (err) throw err;
-            // console.log(resultr);
-
+            let results = resultr
             res.render('cart', {
-                cart_items: resultr,
+                cart_items: results,
                 imgsrc: '/images/' + productId + '.jpg',
 
             })
@@ -386,11 +470,7 @@ router.get("/remove-from-cart/:x", (req, res) => {
 
 })
 
-router.get("/products2", isAuth, (req, res) => {
-    res.render('products2', {
-        name: loggeduser
-    })
-})
+
 
 router.get("/account", (req, res) => {
     req.session.isAuth = false;
@@ -430,17 +510,34 @@ router.get("/productdetail/:x", (req, res) => {
 
     var productId = req.params.x;
 
-    res.render('productdetail', {
-        imgsrc: '/images/' + productId + '.jpg'
+
+    let sql = `select * from products where brand  = 'happilo' ;`
+    con.query(sql, (err, result) => {
+        if (err) throw err;
+        let products = result
+        res.render('productdetail', {
+            imgsrc: products,
+            products: products,
+            name: loggeduser,
+            imgsrc: '/images/' + productId + '.jpg'
+        })
     })
+
 })
 
 router.get("/productdetail2/:x", (req, res) => {
 
     var productId = req.params.x;
 
-    res.render('productdetail2', {
-        imgsrc: '/images/' + productId + '.jpg'
+    con.query(sql, (err, result) => {
+        if (err) throw err;
+        let products = result
+        res.render('productdetail2', {
+            imgsrc: products,
+            products: products,
+            name: loggeduser,
+            imgsrc: '/images/' + productId + '.jpg'
+        })
     })
 })
 

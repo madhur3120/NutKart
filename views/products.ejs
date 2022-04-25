@@ -25,7 +25,6 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <!-- <a href="/"><img src="/images/logo.png" width="125px" /> </a> -->
                     <a href="/" style="font-size: 40px;font-weight: 900;">NutKart </a>
 
                 </div>
@@ -34,7 +33,7 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/products">Products</a></li>
                         <li><a href="/about-page">About</a></li>
-                        <li><a href="/contat-page">Contact</a></li>
+                        <li><a href="/contact-page">Contact</a></li>
                         <li><a href="/account">Account</a></li>
                     </ul>
                 </nav>
@@ -46,187 +45,144 @@
     </div>
     <br>
 
+
     <div class="small-container">
         <div class="row row-2">
-            <h2>All products</h2>
+            <h1 class="title-top">All products</h1>
+
+            <form action="/search" method="POST">
+                <input type="text" name="searchproduct" class="search-bar" placeholder="search here">
+                <button type="submit" class="btn">search</button>
+            </form>
             <br />
             <br />
             <br>
             <br>
-            <a href="/low-to-high" id="sort-button1" class="sorting-button" style="color: black;">low-to-high</a>
-            <a href="/high-to-low" id="sort-button2" class="sorting-button" style="color: black;">high-to-low</a>
+            <a href="/low-to-high" class="btn" class="sorting-button">low-to-high</a>
+            <a href="/high-to-low" class="btn" class="sorting-button">high-to-low</a>
 
         </div>
-        <div class="row">
-            <div class="col-4">
-                <!-- <a href="/productdetail/granola-mix"> <img src="images/granola-mix.jpg" /> </a> -->
-                <a href="/productdetail/<%= products[0].product_name %>"> <img src="<%= imgsrc[0].img_src1 %>" /> </a>
-                <h4>
-                    <%= products[0].product_name %>
-                </h4>
-                <p>
-                    Rs
-                    <%= products[0].price  %>/-
-                </p>
-            </div>
-            <div class="col-4">
-                <!-- <a href="/productdetail/happilo-cashew"><img src="images/happilo-cashew.jpg" /></a> -->
-                <a href="/productdetail/<%= products[1].product_name %>"><img src="<%= imgsrc[1].img_src1 %>" /></a>
-                <h4>
-                    <%= products[1].product_name %>
-                </h4>
-                <p>
-                    Rs
-                    <%= products[1].price  %>/-
-                </p>
-            </div>
 
-            <div class="col-4">
-                <a href="/productdetail/<%= products[2].product_name %>"><img src="<%= imgsrc[2].img_src1 %>" alt="" /></a>
-                <h4>
-                    <%= products[2].product_name %>
-                </h4>
-                <p>
-                    Rs
-                    <%= products[2].price  %>/-
-                </p>
-            </div>
-            <div class="col-4">
-                <a href="/productdetail/<%= products[3].product_name %>"><img src="<%= imgsrc[3].img_src1 %>" alt="" /></a>
-                <h4>
-                    <%= products[3].product_name %>
-                </h4>
-                <p>
-                    Rs
-                    <%= products[3].price  %>/-
-                </p>
-            </div>
-        </div>
     </div>
 
-    <div class="small-container">
-        <div class="row">
-            <div class="col-4">
-                <a href="/productdetail/happilo-pista2"> <img src="images/happilo-pista2.jpg" alt="" /></a>
 
-                <h4>Happilo Rasin</h4>
-                <p>Rs. 380/-</p>
-            </div>
-            <div class="col-4">
-                <a href="/productdetail/nutty-mixedberries"><img src="images/nutty-mixedberries.jpg" height="250px" alt="" /></a>
+    <% let i = 0; while(products[i] != undefined) { %>
 
-                <h4>Nutty Mixedberries</h4>
-                <p>Rs. 400/-</p>
-            </div>
-            <div class="col-4">
-                <a href="/productdetail/nutty-sports"><img src="images/nutty-sports.jpg" alt="" /></a>
-                <h4>Nutty Sports</h4>
-                <p>Rs. 420/-</p>
-            </div>
-            <div class="col-4">
-                <a href="/productdetail/pista"><img src="images/pista.png" alt="" /></a>
+        <div class="small-container">
+            <div class="row">
+                <div class="col-4">
+                    <a href="/productdetail/<%= products[i].product_name %>"> <img src="<%= products[i].img_src1 %>" alt="" /></a>
 
-                <h4>Pistachio</h4>
-                <p>Rs. 350/-</p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-4">
-                <a href="/productdetail/nuts-almond"><img src="images/nuts-almond.png" alt="" /></a>
-                <h4>Almonds</h4>
-                <p>Rs. 279/-</p>
-            </div>
-            <div class="col-4">
-                <a href="/productdetail/nuts-almond"><img src="images/nutty-mixedberries3.jpg" alt="" /></a>
-
-                <h4>Nutty Mixedberries Small</h4>
-                <p>Rs. 200/-</p>
-            </div>
-            <div class="col-4">
-                <a href="/productdetail/happilo-pista2"><img src="images/happilo-pista2.jpg" alt="" /></a>
-
-                <h4>Happilo Pista Small</h4>
-                <p>Rs. 150/-</p>
-            </div>
-            <div class="col-4">
-                <a href="/productdetail/nutty-sports3"><img src="images/nutty-sports3.jpg" alt="" /></a>
-                <h4>Nutty Sports Small</h4>
-                <p>Rs. 180/-</p>
-            </div>
-        </div>
-    </div>
-
-    <!--javascript for toggle menu-->
-
-    <script>
-        let menuitems = document.getElementById("menu-items");
-        menuitems.style.maxHeight = "0px";
-
-        function menutoggle() {
-            if (menuitems.style.maxHeight == "0px") {
-                menuitems.style.maxHeight = "200px";
-            } else {
-                menuitems.style.maxHeight = "0px";
-            }
-        }
-    </script>
-
-    <!-- -----------footer--------- -->
-    <footer>
-        <div class="footer-row">
-            <div class="footer-col">
-                <!-- <img src="images/footer-logo.png" class="logo" height="130px" width="130px"> -->
-                <br>
-                <br>
-
-                <a href="/" style="font-size: 40px;font-weight: 900;color: #fff;">NutKart </a>
-
-            </div>
-            <div class="footer-col">
-                <h3>Office
-                    <div class="underline"><span></span></div>
-                </h3>
-                <p>Gyan Circle</p>
-                <p>Satyavedu, Chittoor</p>
-                <p>Andhra Pradesh, PIN 517616, India</p>
-                <p class="email-id">NutKarT@iiits.in</p>
-                <h4>+91 1234567890</h4>
-            </div>
-            <div class="footer-col">
-                <h3>Links
-                    <div class="underline"><span></span></div>
-                </h3>
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li><a href="/account">Account</a></li>
-                    <li><a href="/contact-page">Contact Us</a></li>
-                    <li><a href="/blog-page">Blog</a></li>
-                </ul>
-            </div>
-            <div class="footer-col">
-                <h3>Newsletter
-                    <div class="underline"><span></span></div>
-                </h3>
-                <form class="footer-form">
-                    <i class="fa fa-envelope-o" aria-hidden="true"></i>
-                    <input type="email" placeholder="Enter your email id" requireds>
-                    <button type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>                    </button>
-                </form>
-
-                <div class="social">
-                    <i class="fa fa-facebook" aria-hidden="true"></i>
-                    <i class="fa fa-twitter" aria-hidden="true"></i>
-                    <i class="fa fa-whatsapp" aria-hidden="true"></i>
-                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                    <h4>
+                        <%= products[i].product_name %>
+                    </h4>
+                    <p>Rs
+                        <%= products[i].price %> /-</p>
                 </div>
+
+                <% if(products[i+1] != undefined) { %>
+                    <div class="col-4">
+                        <a href="/productdetail/<%= products[i+1].product_name %>"> <img src="<%= products[i+1].img_src1 %>" alt="" /></a>
+
+                        <h4>
+                            <%= products[i+1].product_name %>
+                        </h4>
+                        <p>Rs
+                            <%= products[i+1].price  %>/-</p>
+                    </div>
+
+                    <% } else break;%>
+
+                        <% if(products[i+2] != undefined) { %>
+                            <div class="col-4">
+                                <a href="/productdetail/<%= products[i+2].product_name %>"> <img src="<%= products[i+2].img_src1 %>" alt="" /></a>
+
+                                <h4>
+                                    <%= products[i+2].product_name %>
+                                </h4>
+                                <p>Rs
+                                    <%= products[i+2].price  %>/-</p>
+                            </div>
+                            <% } else break;%>
             </div>
+
         </div>
 
-        <!--<hr class="shine">-->
-        <hr class="accessory">
+        <% i += 3} %>
 
-        <p class="copyright">NutKART © 2022 - All Rights Reserved</p>
-    </footer>
+            </div>
+            </div>
+
+            <!--javascript for toggle menu-->
+
+            <script>
+                let menuitems = document.getElementById("menu-items");
+                menuitems.style.maxHeight = "0px";
+
+                function menutoggle() {
+                    if (menuitems.style.maxHeight == "0px") {
+                        menuitems.style.maxHeight = "200px";
+                    } else {
+                        menuitems.style.maxHeight = "0px";
+                    }
+                }
+            </script>
+
+            <!-- -----------footer--------- -->
+            <footer>
+                <div class="footer-row">
+                    <div class="footer-col">
+                        <br>
+                        <br>
+
+                        <a href="/" style="font-size: 40px;font-weight: 900;color: #fff;">NutKart </a>
+
+                    </div>
+                    <div class="footer-col">
+                        <h3>Office
+                            <div class="underline"><span></span></div>
+                        </h3>
+                        <p>Gyan Circle</p>
+                        <p>Satyavedu, Chittoor</p>
+                        <p>Andhra Pradesh, PIN 517616, India</p>
+                        <p class="email-id">NutKarT@iiits.in</p>
+                        <h4>+91 1234567890</h4>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Links
+                            <div class="underline"><span></span></div>
+                        </h3>
+                        <ul>
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/account">Account</a></li>
+                            <li><a href="/contact-page">Contact Us</a></li>
+                            <li><a href="/blog-page">Blog</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-col">
+                        <h3>Newsletter
+                            <div class="underline"><span></span></div>
+                        </h3>
+                        <form class="footer-form">
+                            <i class="fa fa-envelope-o" aria-hidden="true"></i>
+                            <input type="email" placeholder="Enter your email id" requireds>
+                            <button type="submit"><i class="fa fa-paper-plane-o" aria-hidden="true"></i>                    </button>
+                        </form>
+
+                        <div class="social">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!--<hr class="shine">-->
+                <hr class="accessory">
+
+                <p class="copyright">NutKART © 2022 - All Rights Reserved</p>
+            </footer>
 </body>
 
 </html>
