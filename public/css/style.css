@@ -183,17 +183,29 @@ h4 {
     display: none;
 }
 
-.sorting-button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
+.search-bar {
+    padding: 4px 25px;
+    border-radius: 30px;
+    margin: 30px 0;
+}
+
+.btn {
     display: inline-block;
-    font-size: 14px;
-    margin: 4px 0px;
-    cursor: pointer;
+    background: #ff523b;
+    color: #fff;
+    padding: 8px 18px;
+    border-radius: 30px;
+    margin: 18px 0;
+    transition: background 0.5sec;
+    border: none
+}
+
+.btn:hover {
+    background: #563434;
+}
+
+.title-top {
+    color: #555;
 }
 
 

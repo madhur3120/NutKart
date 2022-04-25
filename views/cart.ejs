@@ -14,7 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Island+Moments&family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,500&family=Roboto&display=swap" rel="stylesheet" />
 </head>
 
-<body>
+<body onload="sub_total()">
     <div class="header">
         <div class="container">
             <div class="navbar">
@@ -46,7 +46,7 @@
             <tr>
                 <th>Product</th>
                 <th>Quantity</th>
-                <th>Subtotal</th>
+                <th>Price</th>
             </tr>
 
             <% cart_items.forEach(function (items) { %>
@@ -58,18 +58,22 @@
                                 <p>
                                     <%= items.product_name %>
                                 </p>
-                                <small>Price : Rs. 150/-</small>
+                                <small id="product_price">Rs <%= items.product_price %></small>
                                 <br />
                                 <a href="/remove-from-cart/<%= items.product_name %>">Remove</a>
                             </div>
                         </div>
                     </td>
-                    <td><input type="number" value="1" /></td>
-                    <td>Rs. 150/-</td>
+                    <td><input id="count" type="number" value="1" min="1" onclick="sub_total()" /></td>
+                    <td id="subtotal">Rs
+                        <%= items.product_price %> /-
+                    </td>
 
                 </tr>
                 <% }) %>
         </table>
+
+        <a href="/checkout" id="sort-button1" class="sorting-button" style="color: black;">low-to-high</a>
     </div>
 
     <br>
@@ -77,6 +81,16 @@
     <br>
     <br>
     <br>
+
+    <script>
+        function sub_total() {
+            let count = document.getElementById('count').value
+
+
+
+
+        }
+    </script>
 
 
 

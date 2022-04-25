@@ -22,15 +22,15 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="../images/logo.png" width="125px" />
+                    <a href="/" style="font-size: 40px;font-weight: 900;color: #fff;">NutKart </a>
                 </div>
                 <nav>
                     <ul id="menu-items">
                         <li><a href="/">Home</a></li>
-                        <li><a href="/products">Products</a></li>
+                        <li><a href="/products2">Products</a></li>
                         <li><a href="/about-page">About</a></li>
                         <li><a href="/contact-page">Contact</a></li>
-                        <li><a href="/account">Account</a></li>
+                        <li><a href="/user-page">Account</a></li>
                     </ul>
                 </nav>
 
@@ -67,7 +67,7 @@
             <option>1 kilogram</option>
           </select>
                 <input type="number" value="1" />
-                <a href="/add-to-cart" id="addtocart" class="btn">Add to Cart</a>
+                <a href="/add-to-cart" id="addtocart" class="btn" method="POST">Add to Cart</a>
 
                 <h3>Product Details <i class="fa fa-indent"></i></h3>
                 <br />
@@ -83,7 +83,10 @@
     <div class="small-container">
         <div class="row row-2">
             <h2>Related Products</h2>
-            <p>View More</p>
+            <a href="/products2">
+                <p>View More</p>
+            </a>
+
         </div>
     </div>
 

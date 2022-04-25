@@ -22,7 +22,8 @@
         <div class="container">
             <div class="navbar">
                 <div class="logo">
-                    <img src="../images/logo.png" width="125px" />
+                    <a href="/" style="font-size: 40px;font-weight: 900;color: #fff;">NutKart </a>
+
                 </div>
                 <nav>
                     <ul id="menu-items">
@@ -33,6 +34,8 @@
                         <li><a href="/account">Account</a></li>
                     </ul>
                 </nav>
+
+
 
                 <img src="/images/cart.png" width="30px" height="30px" />
                 <img src="/images/menu.png" class="menu-icon" onclick="menutoggle()" />
@@ -83,7 +86,13 @@
     <div class="small-container">
         <div class="row row-2">
             <h2>Related Products</h2>
-            <p>View More</p>
+            <a href="/products2">
+                <a href="/products">
+                    <p>View More</p>
+                </a>
+
+            </a>
+
         </div>
     </div>
 
@@ -91,7 +100,8 @@
     <div class="small-container">
         <div class="row">
             <div class="col-4">
-                <img src="../images/happilo-raisin.jpg" id="abc" alt="" />
+                <!-- <img src="../images/happilo-raisin.jpg" id="abc" alt="" /> -->
+                <a href="/productdetail/<%= products[0].product_name %>"> <img src="<%= products[0].img_src1 %>" alt="" /></a>
                 <h4>Happilo Rasin</h4>
                 <p>Rs. 380/-</p>
             </div>
