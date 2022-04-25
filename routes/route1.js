@@ -428,16 +428,13 @@ router.get("/add-to-cart/:x", (req, res) => {
             })
         })
 
-
-        let productId = req.params.x;
-
         let sqlr = `select DISTINCT username  ,product_name , product_price , img_src1 from cart where username = '${username}'`
         con.query(sqlr, (err, resultr) => {
             if (err) throw err;
             let results = resultr
             res.render('cart', {
                 cart_items: results,
-                imgsrc: '/images/' + productId + '.jpg',
+                imgsrc: '/images/' + product_name + '.jpg',
 
             })
 
@@ -515,6 +512,7 @@ router.get("/productdetail/:x", (req, res) => {
     con.query(sql, (err, result) => {
         if (err) throw err;
         let products = result
+        console.log(products[0].img_src1);
         res.render('productdetail', {
             imgsrc: products,
             products: products,
@@ -527,13 +525,13 @@ router.get("/productdetail/:x", (req, res) => {
 
 router.get("/productdetail2/:x", (req, res) => {
 
-    var productId = req.params.x;
-
+    let productId = req.params.x;
+    let sql = `select * from products where brand  = 'happilo' ;`
     con.query(sql, (err, result) => {
         if (err) throw err;
         let products = result
+        console.log(products[0].img_src1);
         res.render('productdetail2', {
-            imgsrc: products,
             products: products,
             name: loggeduser,
             imgsrc: '/images/' + productId + '.jpg'
