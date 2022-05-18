@@ -1,6 +1,8 @@
 NUTKART
 E-Commerce site for Dryfruits
 
+Video Demonstration of the website - https://youtu.be/X_I7tdA3hMM
+
 Copy the link and clone it in a new folder :
 [command :- git clone https://github.com/madhur3120/NutKart ]
 
