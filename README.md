@@ -41,3 +41,14 @@ Now you will be directed to the home page of the NutKart
 Register and login to buy products
 
 Github repository ------------> [https://github.com/madhur3120/NutKart]
+
+Sample Images -
+![nutkart-sample1](https://user-images.githubusercontent.com/76939494/169074878-1b451c80-3cec-469a-ae51-49e5a045e4fa.jpg)
+
+![nutkart-sample2](https://user-images.githubusercontent.com/76939494/169075157-e66855e6-a525-4b52-865f-8b2f17d242ff.jpg)
+
+![nutkart-sample3](https://user-images.githubusercontent.com/76939494/169075172-c224a5f6-566f-46b7-84c6-a523bb5aaa5b.jpg)
+
+![nutkart-sample4](https://user-images.githubusercontent.com/76939494/169075195-2fbd11a9-7503-4104-a5a5-d36cdd23347a.jpg)
+
+![nutkart-sample5](https://user-images.githubusercontent.com/76939494/169075206-88629cea-d35c-4b5b-a038-8fd21050ca1f.jpg)
